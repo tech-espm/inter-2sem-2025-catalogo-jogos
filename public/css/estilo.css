@@ -9,7 +9,7 @@ html, body {
 }
 
 .limitador {
-	max-width: 1200px;
+	max-width: 1300px;
 	margin: 0px auto;
 
 	/* Para fazer o rodapé ficar sempre na parte inferior da página ;) */
@@ -39,7 +39,7 @@ html, body {
 /* Nossos css */
 
 
-
+/*barra*/
 .titulo{
     color: rgb(255, 255, 255);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -57,7 +57,7 @@ html, body {
 
 
 .navbar-custom {
-      background: rgb(34, 30, 30);
+      background: rgb(0, 0, 0);
       padding: 15px 40px;
     }
 
@@ -67,5 +67,51 @@ html, body {
       font-size: 1.6rem;
       margin-left: 15px;
       cursor: pointer;
+}
+
+/* Home */
+
+.container-fluid-home{
+	margin-top: 60px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.subtitulo{
+	font-size: 20px;
+	color: rgb(255, 255, 255);
+}
+
+
+.custom-carousel {
+  overflow: visible;              
+  max-width: 70%;               
+  margin-inline: auto;
+}
+
+.custom-carousel-2{
+	max-width: 100%; 
+	margin: 160px 0 auto;
+}
+
+
+.custom-carousel .carousel-control-prev,
+.custom-carousel .carousel-control-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.75rem;               
+  opacity: 1;                  
+}
+
+.custom-carousel .carousel-control-prev { left: -3.5rem; }  
+.custom-carousel .carousel-control-next { right: -3.5rem; } 
+
+
+.custom-carousel .carousel-indicators { bottom: -2.5rem; }
+
+
+@media (max-width: 576px) {
+  .custom-carousel .carousel-control-prev { left: .25rem; }
+  .custom-carousel .carousel-control-next { right: .25rem; }
+  .custom-carousel .carousel-indicators { bottom: .5rem; }
 }
 
