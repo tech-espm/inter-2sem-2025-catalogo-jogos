@@ -14,15 +14,11 @@
 		<h1 class="subtitulo">Lançamentos</h1>
 
 		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<img src="/public/img/Hollow Knight Silksong.png" class="d-block w-100" alt="">
+			<% for (let contador = 0; contador < jogos.length; contador++) { %>
+			<div class="carousel-item <%= (contador === 0 ? 'active' : '') %>">
+				<img src="/public/img/jogos/<%= jogos[contador].id %>.jpg" class="d-block w-100" alt="" />
 			</div>
-			<div class="carousel-item">
-				<img src="/public/img/Battlefield 6.png" class="d-block w-100" alt="">
-			</div>
-			<div class="carousel-item">
-				<img src="/public/img/Hades 2.jpg" class="d-block w-100" alt="">
-			</div>
+			<% } %>
 		</div>
 
 		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
