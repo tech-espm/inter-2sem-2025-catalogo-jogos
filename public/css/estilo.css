@@ -5,13 +5,20 @@ img {
 html, body {
 	/* Para fazer o rodapé ficar sempre na parte inferior da página ;) */
 	min-height: 100vh;
+<<<<<<< Updated upstream
 	background-color: rgb(34, 30, 30);
 }
 
 .limitador {
 	max-width: 1300px;
-	margin: 0px auto;
+=======
+	
+}
 
+.limitador {
+	max-width: 1350px;
+>>>>>>> Stashed changes
+	margin: 0px auto;
 	/* Para fazer o rodapé ficar sempre na parte inferior da página ;) */
 	min-height: 100vh;
 	display: flex;
@@ -26,8 +33,13 @@ html, body {
 
 .rodape {
 	text-align: center;
+<<<<<<< Updated upstream
 	background-color: rgb(34, 30, 30);
 	padding: 2rem;
+=======
+	background-color: black;
+	padding: 1rem;
+>>>>>>> Stashed changes
 }
 
 .link-rodape, .link-rodape:hover {
@@ -35,6 +47,7 @@ html, body {
 	text-decoration: none;
 }
 
+<<<<<<< Updated upstream
 
 /* Nossos css */
 
@@ -43,11 +56,18 @@ html, body {
 .titulo{
     color: rgb(255, 255, 255);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+=======
+/* Teste cabeçalho */
+.titulo{
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+>>>>>>> Stashed changes
     font-size: 50px;
     text-shadow: black;
 
 }
 
+<<<<<<< Updated upstream
 .wish{
 	color: rgb(255, 255, 255);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -59,16 +79,26 @@ html, body {
 .navbar-custom {
       background: rgb(0, 0, 0);
       padding: 15px 40px;
+=======
+.navbar-custom {
+      background: rgb(0, 0, 0);
+      padding: 0px 40px;
+>>>>>>> Stashed changes
     }
 
 
 .icon-btn {
       color: white;
+<<<<<<< Updated upstream
       font-size: 1.6rem;
+=======
+      font-size: 1.5rem;
+>>>>>>> Stashed changes
       margin-left: 15px;
       cursor: pointer;
 }
 
+<<<<<<< Updated upstream
 /* Home */
 
 .container-fluid-home{
@@ -114,4 +144,6 @@ html, body {
   .custom-carousel .carousel-control-next { right: .25rem; }
   .custom-carousel .carousel-indicators { bottom: .5rem; }
 }
+=======
+>>>>>>> Stashed changes
 
