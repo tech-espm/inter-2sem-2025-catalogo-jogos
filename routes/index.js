@@ -4,32 +4,7 @@ const wrap = require("express-async-error-wrapper");
 const router = express.Router();
 
 router.get("/", wrap(async (req, res) => {
-	let jogos = [
-		{
-			id: 1,
-			nome: "Hollow Knight Silksong",
-			genero: "Aventura",
-			nota: 4.5,
-		},
-		{
-			id: 2,
-			nome: "Battlefield 6",
-			genero: "Aventura",
-			nota: 5.0,
-		},
-		{
-			id: 3,
-			nome: "Hades 2",
-			genero: "Aventura",
-			nota: 3.5,
-		}
-	];
-
-	let opcoes = {
-		jogos: jogos
-	};
-
-	res.render("index/index", opcoes);
+	res.render("index/index");
 }));
 
 router.get("/sobre", wrap(async (req, res) => {
