@@ -14,11 +14,11 @@
 		<h1 class="subtitulo">Lançamentos</h1>
 
 		<div class="carousel-inner">
-			<% for (let contador = 0; contador < jogos.length; contador++) { %>
-			<div class="carousel-item <%= (contador === 0 ? 'active' : '') %>">
-				<img src="/public/img/CapaJogos/<%=jogos[contador].id %>.jpg" class="d-block w-100" alt="" />
-			</div>
-			<% } %>
+			<% for (let contador=0; contador < jogos.length; contador++) { %>
+				<div class="carousel-item <%= (contador === 0 ? 'active' : '') %>">
+					<img src="/public/img/CapaJogos/<%= jogos[contador].id %>.jpg" class="d-block w-100" alt="" />
+				</div>
+				<% } %>
 		</div>
 
 		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -48,86 +48,20 @@
 		<div class="carousel-inner">
 			<div class="carousel-item active">
 				<div class="row">
-					<div class="col-sm-3 mb-3 mb-sm-0">
-						<div class="card" style="width: 18rem;">
-							<img src="/public/img/Hollow Knight Silksong.png" class="card-img-top" alt="...">
-							<div class="card-body">
-								<p class="card-text">Some quick example text to build on the card title and make up the
-									bulk of the card’s content.</p>
+					<% for (let contador=0; contador < jogos.length; contador++) { %>
+						<div class="col-sm-3 mb-3 mb-sm-0">
+							<div class="card" style="width: 18rem;">
+								<img src="/public/img/CapaJogos/<%= jogos[contador].id %>.jpg" class="card-img-top" alt="...">
+								<div class="card-body">
+									<p class="card-text">Some quick example text to build on the card title and make up
+										the
+										bulk of the card’s content.</p>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="card" style="width: 18rem;">
-							<img src="/public/img/Hades 2.jpg" class="card-img-top" alt="...">
-							<div class="card-body">
-								<p class="card-text">Some quick example text to build on the card title and make up the
-									bulk of the card’s content.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="card" style="width: 18rem;">
-							<img src="/public/img/Battlefield 6.png" class="card-img-top" alt="...">
-							<div class="card-body">
-								<p class="card-text">Some quick example text to build on the card title and make up the
-									bulk of the card’s content.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="card" style="width: 18rem;">
-							<img src="/public/img/Hollow Knight Silksong.png" class="card-img-top" alt="...">
-							<div class="card-body">
-								<p class="card-text">Some quick example text to build on the card title and make up the
-									bulk of the card’s content.</p>
-							</div>
-						</div>
-					</div>
+						<% } %>
 				</div>
 			</div>
-
-			<div class="carousel-item">
-				<div class="row">
-					<div class="col-sm-3 mb-3 mb-sm-0">
-						<div class="card" style="width: 18rem;">
-							<img src="..." class="card-img-top" alt="...">
-							<div class="card-body">
-								<p class="card-text">Some quick example text to build on the card title and make up the
-									bulk of the card’s content.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="card" style="width: 18rem;">
-							<img src="..." class="card-img-top" alt="...">
-							<div class="card-body">
-								<p class="card-text">Some quick example text to build on the card title and make up the
-									bulk of the card’s content.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="card" style="width: 18rem;">
-							<img src="..." class="card-img-top" alt="...">
-							<div class="card-body">
-								<p class="card-text">Some quick example text to build on the card title and make up the
-									bulk of the card’s content.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="card" style="width: 18rem;">
-							<img src="..." class="card-img-top" alt="...">
-							<div class="card-body">
-								<p class="card-text">Some quick example text to build on the card title and make up the
-									bulk of the card’s content.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
 			<!-- Adicione mais itens de carrossel conforme necessário -->
 		</div>
 
@@ -142,9 +76,4 @@
 			<span class="visually-hidden">Next</span>
 		</button>
 	</div>
-
-
-
-
-
 </div>

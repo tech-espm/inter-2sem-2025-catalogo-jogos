@@ -3,6 +3,7 @@ const wrap = require("express-async-error-wrapper");
 
 const router = express.Router();
 
+// Rota da home
 router.get("/", wrap(async (req, res) => {
 	let jogos = [
 		{
@@ -22,7 +23,19 @@ router.get("/", wrap(async (req, res) => {
 			nome: "Hades 2",
 			genero: "Aventura",
 			nota: 3.5,
-		}
+		},
+		{
+			id: 4,
+			nome: "Plants Vs Zombies: Replanted",
+			genero: "Arcade",
+			nota: 4.5,
+		},
+		// {
+		// 	id: 5,
+		// 	nome: "Stardew valley",
+		// 	genero: "Arcade",
+		// 	nota: 5.0,
+		// }
 	];
 
 	let opcoes = {
@@ -36,7 +49,6 @@ router.get("/sobre", wrap(async (req, res) => {
 	let opcoes = {
 		titulo: "Sobre"
 	};
-
 	res.render("index/sobre", opcoes);
 }));
 
