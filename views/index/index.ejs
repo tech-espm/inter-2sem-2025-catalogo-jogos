@@ -1,24 +1,28 @@
 ﻿<div class="container-fluid-home">
 
 
-	<div id="carouselExampleIndicators" class="carousel slide custom-carousel" data-bs-ride="false">
+	<div id="carouselExampleIndicators" class="carousel slide custom-carousel" data-bs-ride="false" data-bs-wrap="true">
+		<h1 class="subtitulo mt-3">Lançamentos</h1>
 		<div class="carousel-indicators">
-			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-				aria-label="Slide 1"></button>
-			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-				aria-label="Slide 2"></button>
-			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-				aria-label="Slide 3"></button>
+			<% for (let contador=0; contador < jogos.length; contador++) { %>
+				<% if (contador===0) { %>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<%= contador %>"
+						class="active" aria-current="true" aria-label="Slide <%= contador + 1 %>">
+					</button>
+				<% } else { %>
+					<button type="button" data-bs-target="#carouselExampleIndicators"
+						data-bs-slide-to="<%= contador %>" aria-label="Slide <%= contador + 1 %>">
+					</button>
+				<% } %>
+			<% } %>
 		</div>
-
-		<h1 class="subtitulo">Lançamentos</h1>
 
 		<div class="carousel-inner">
 			<% for (let contador=0; contador < jogos.length; contador++) { %>
 				<div class="carousel-item <%= (contador === 0 ? 'active' : '') %>">
-					<img src="/public/img/CapaJogos/<%= jogos[contador].id %>.jpg" class="d-block w-100" alt="" />
+					<img src="/public/img/CapaJogos/<%= jogos[contador].id %>.jpg" class="d-block w-100" alt="">
 				</div>
-				<% } %>
+			<% } %>
 		</div>
 
 		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -32,7 +36,6 @@
 			<span class="visually-hidden">Próximo</span>
 		</button>
 	</div>
-
 
 
 	<div id="carouselExampleIndicators2" class="carousel slide custom-carousel custom-carousel-2" data-bs-ride="false">

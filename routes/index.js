@@ -38,7 +38,7 @@ router.get("/", wrap(async (req, res) => {
 		},
 		{
 		 	id: 6,
-		 	nome: "Lego Batman 2",
+		 	nome: "Mario Kart World",
 		 	genero: "Arcade",
 		 	nota: 5.0,
 		}
