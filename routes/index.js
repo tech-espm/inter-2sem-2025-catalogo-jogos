@@ -30,12 +30,18 @@ router.get("/", wrap(async (req, res) => {
 			genero: "Arcade",
 			nota: 4.5,
 		},
-		// {
-		// 	id: 5,
-		// 	nome: "Stardew valley",
-		// 	genero: "Arcade",
-		// 	nota: 5.0,
-		// }
+		{
+		 	id: 5,
+		 	nome: "Stardew valley",
+		 	genero: "Arcade",
+		 	nota: 5.0,
+		},
+		{
+		 	id: 6,
+		 	nome: "Lego Batman 2",
+		 	genero: "Arcade",
+		 	nota: 5.0,
+		}
 	];
 
 	let opcoes = {

@@ -37,21 +37,22 @@
 
 	<div id="carouselExampleIndicators2" class="carousel slide custom-carousel custom-carousel-2" data-bs-ride="false">
 		<div class="carousel-indicators">
-			<button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0" class="active"
-				aria-current="true" aria-label="Slide 1"></button>
-			<button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1"
-				aria-label="Slide 2"></button>
-			<button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2"
-				aria-label="Slide 3"></button>
+			<% let qtdeBotoes = Math.ceil(jogos.length / 4); %>
+			<%for (let i = 0; i < qtdeBotoes; i++) { %>
+			<button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="<%= i %>" class="<%= (i === 0 ? 'active' : '') %>"
+				aria-current="<%= (i === 0 ? 'true' : 'false') %>" aria-label="Slide <%= (i + 1) %>"></button>
+			<% } %>
 		</div>
 
 		<div class="carousel-inner">
-			<div class="carousel-item active">
+			<%for (let i = 0; i < jogos.length; ) { %>
+			<div class="carousel-item <%= (i === 0 ? 'active' : '') %>">
 				<div class="row">
-					<% for (let contador=0; contador < jogos.length; contador++) { %>
+					<% for (let contador=0; contador < 4 && i < jogos.length; contador++, i++) { %>
 						<div class="col-sm-3 mb-3 mb-sm-0">
 							<div class="card" style="width: 18rem;">
-								<img src="/public/img/CapaJogos/<%= jogos[contador].id %>.jpg" class="card-img-top" alt="...">
+								<img src="/public/img/CapaJogos/<%= jogos[i].id %>.jpg" class="card-img-top"
+									alt="...">
 								<div class="card-body">
 									<p class="card-text">Some quick example text to build on the card title and make up
 										the
@@ -62,6 +63,7 @@
 						<% } %>
 				</div>
 			</div>
+			<% } %>
 			<!-- Adicione mais itens de carrossel conforme necessário -->
 		</div>
 
