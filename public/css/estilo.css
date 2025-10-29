@@ -62,10 +62,10 @@ html, body {
 
 
 .icon-btn {
-      color: white;
-      font-size: 1.6rem;
-      margin-left: 15px;
-      cursor: pointer;
+    color: white;
+    font-size: 1.6rem;
+    margin-left: 15px;
+    cursor: pointer;
 }
 
 /* Home */
@@ -75,23 +75,34 @@ html, body {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+
+
+/* Carousel lançamentos */
+
 .subtitulo{
 	font-size: 20px;
 	color: rgb(255, 255, 255);
 }
 
-
 .custom-carousel {
-  overflow: visible;              
-  max-width: 70%;               
-  margin-inline: auto;
+  	overflow: visible;              
+  	max-width: 70%;               
+  	margin-inline: auto;
 }
 
-.custom-carousel-2{
-	max-width: 100%; 
-	margin: 160px 0 auto;
+.custom-carousel .carousel-item {
+	aspect-ratio: 16/9;
 }
 
+.custom-carousel .carousel-item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.custom-carousel .carousel-inner { 
+	overflow: hidden; 
+}
 
 .custom-carousel .carousel-control-prev,
 .custom-carousel .carousel-control-next {
@@ -103,14 +114,58 @@ html, body {
 
 .custom-carousel .carousel-control-prev { left: -3.5rem; }  
 .custom-carousel .carousel-control-next { right: -3.5rem; } 
-
-
 .custom-carousel .carousel-indicators { bottom: -2.5rem; }
 
+/* Carousel populares */
 
-@media (max-width: 576px) {
-  .custom-carousel .carousel-control-prev { left: .25rem; }
-  .custom-carousel .carousel-control-next { right: .25rem; }
-  .custom-carousel .carousel-indicators { bottom: .5rem; }
+.custom-carousel2{                  
+	max-width: 85%; 
+	margin: 100px auto 0;
+	position: relative;
+	overflow: visible;
 }
+
+.custom-carousel2 .card-img-top{
+  	width: 100%;
+  	aspect-ratio: 16/9;
+  	object-fit: cover;
+  	object-position: center;
+}
+
+.custom-carousel2 .carousel-inner{
+  	overflow: hidden;
+}
+
+.custom-carousel2 .fixo{
+ 	flex-wrap: nowrap;
+}
+
+
+.custom-carousel2 .carousel-control-prev,
+.custom-carousel2 .carousel-control-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.75rem;               
+  opacity: 1;                  
+}
+
+.custom-carousel2 .carousel-control-prev { left: -3.5rem; }  
+.custom-carousel2 .carousel-control-next { right: -3.5rem; } 
+
+
+.custom-carousel2 .carousel-indicators { bottom: -2.5rem; }
+
+/* MOBILE */
+@media (max-width: 575.98px){
+  .custom-carousel2{
+    width: clamp(80px, 90vw, 260px); 
+    margin-inline: auto;             
+    position: relative;              
+  }
+
+}
+
+
+
+
 

@@ -41,7 +41,20 @@ router.get("/", wrap(async (req, res) => {
 		 	nome: "Mario Kart World",
 		 	genero: "Arcade",
 		 	nota: 5.0,
-		}
+		},
+		{
+		 	id: 7,
+		 	nome: "Escape from Duckov",
+		 	genero: "Arcade",
+		 	nota: 4.0,
+		},
+		{
+		 	id: 8,
+		 	nome: "Jurassic World Evolution 3",
+		 	genero: "Arcade",
+		 	nota: 5.0,
+		},
+		
 	];
 
 	let opcoes = {
