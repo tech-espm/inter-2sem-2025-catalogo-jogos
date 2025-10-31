@@ -64,6 +64,24 @@ router.get("/", wrap(async (req, res) => {
 	res.render("index/index", opcoes);
 }));
 
+router.get("/jogo", wrap(async (req, res) => {
+	let id = parseInt(req.query["id"]);
+
+	let jogo = {
+		id: id,
+		nome: "Hollow Knight Silksong",
+		genero: "Aventura",
+		nota: 4.5,
+	};
+
+	let opcoes = {
+		titulo: jogo.nome,
+		jogo: jogo
+	};
+
+	res.render("index/jogo", opcoes);
+}));
+
 router.get("/sobre", wrap(async (req, res) => {
 	let opcoes = {
 		titulo: "Sobre"
