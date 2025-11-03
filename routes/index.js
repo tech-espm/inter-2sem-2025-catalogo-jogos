@@ -31,30 +31,30 @@ router.get("/", wrap(async (req, res) => {
 			nota: 4.5,
 		},
 		{
-		 	id: 5,
-		 	nome: "Stardew valley",
-		 	genero: "Arcade",
-		 	nota: 5.0,
+			id: 5,
+			nome: "Stardew valley",
+			genero: "Arcade",
+			nota: 5.0,
 		},
 		{
-		 	id: 6,
-		 	nome: "Mario Kart World",
-		 	genero: "Arcade",
-		 	nota: 5.0,
+			id: 6,
+			nome: "Mario Kart World",
+			genero: "Arcade",
+			nota: 5.0,
 		},
 		{
-		 	id: 7,
-		 	nome: "Escape from Duckov",
-		 	genero: "Arcade",
-		 	nota: 4.0,
+			id: 7,
+			nome: "Escape from Duckov",
+			genero: "Arcade",
+			nota: 4.0,
 		},
 		{
-		 	id: 8,
-		 	nome: "Jurassic World Evolution 3",
-		 	genero: "Arcade",
-		 	nota: 5.0,
+			id: 8,
+			nome: "Jurassic World Evolution 3",
+			genero: "Arcade",
+			nota: 5.0,
 		},
-		
+
 	];
 
 	let opcoes = {
@@ -89,33 +89,35 @@ router.get("/sobre", wrap(async (req, res) => {
 	res.render("index/sobre", opcoes);
 }));
 
-router.get("/produtos", wrap(async (req, res) => {
-	let produtoA = {
-		id: 1,
-		nome: "Produto A",
-		valor: 25
-	};
+router.get("/wishlist", wrap(async (req, res) => {
 
-	let produtoB = {
-		id: 2,
-		nome: "Produto B",
-		valor: 15
-	};
+let usuario = {
+    id_user: 1,
+    nome_usuario: "Rafel",
+    genero_fav: "Ação",
+    wishlist: [
+        {
+            id_wishlist: 1,
+            id_jogo: 5,
+            nm_jogo: "Stardew Valley"
+        },
+        {
+            id_wishlist: 2,
+            id_jogo: 6,
+            nm_jogo: "Hollow Knight: Silksong"
+        }
+    ]
+};
 
-	let produtoC = {
-		id: 3,
-		nome: "Produto C",
-		valor: 100
-	};
 
-	let produtosVindosDoBanco = [ produtoA, produtoB, produtoC ];
+	let produtosVindosDoBanco = usuario;
 
 	let opcoes = {
 		titulo: "Listagem de Produtos",
 		produtos: produtosVindosDoBanco
 	};
 
-	res.render("index/produtos", opcoes);
+	res.render("index/wishlist", usuario);
 }));
 
 module.exports = router;

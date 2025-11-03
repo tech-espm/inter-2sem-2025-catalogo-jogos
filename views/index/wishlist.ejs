@@ -1,0 +1,16 @@
+<div class="container-fluid">
+
+	<h1>Wishlist do <%= nome_usuario %>
+	</h1>
+
+	<p>Listagem de produtos (<%= wishlist.length %> produtos no total)</p>
+
+	<% for (let i=0; i < wishlist.length; i++) { %>
+		<h3>
+			<%= wishlist[i].nm_jogo %>
+		</h3>
+		<% } %>
+
+
+
+</div>
