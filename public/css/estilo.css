@@ -2,7 +2,8 @@ img {
 	max-width: 100%;
 }
 
-html, body {
+html,
+body {
 	/* Para fazer o rodapé ficar sempre na parte inferior da página ;) */
 	min-height: 100vh;
 	background-color: rgb(34, 30, 30);
@@ -29,7 +30,8 @@ html, body {
 	padding: 2rem;
 }
 
-.link-rodape, .link-rodape:hover {
+.link-rodape,
+.link-rodape:hover {
 	color: white;
 	text-decoration: none;
 }
@@ -39,38 +41,38 @@ html, body {
 
 
 /*barra*/
-.titulo{
-    color: rgb(255, 255, 255);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 50px;
-    text-shadow: black;
+.titulo {
+	color: rgb(255, 255, 255);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 50px;
+	text-shadow: black;
 
 }
 
-.wish{
+.wish {
 	color: rgb(255, 255, 255);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 30px;
-    text-shadow: black;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 30px;
+	text-shadow: black;
 }
 
 
 .navbar-custom {
-      background: rgb(0, 0, 0);
-      padding: 15px 40px;
-    }
+	background: rgb(0, 0, 0);
+	padding: 15px 40px;
+}
 
 
 .icon-btn {
-    color: white;
-    font-size: 1.6rem;
-    margin-left: 15px;
-    cursor: pointer;
+	color: white;
+	font-size: 1.6rem;
+	margin-left: 15px;
+	cursor: pointer;
 }
 
 /* Home */
 
-.container-fluid-home{
+.container-fluid-home {
 	margin-top: 60px;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -79,15 +81,15 @@ html, body {
 
 /* Carousel lançamentos */
 
-.subtitulo{
+.subtitulo {
 	font-size: 20px;
 	color: rgb(255, 255, 255);
 }
 
 .custom-carousel {
-  	overflow: visible;              
-  	max-width: 70%;               
-  	margin-inline: auto;
+	overflow: visible;
+	max-width: 70%;
+	margin-inline: auto;
 }
 
 .custom-carousel .carousel-item {
@@ -100,72 +102,104 @@ html, body {
 	object-fit: cover;
 }
 
-.custom-carousel .carousel-inner { 
-	overflow: hidden; 
+.custom-carousel .carousel-inner {
+	overflow: hidden;
 }
 
 .custom-carousel .carousel-control-prev,
 .custom-carousel .carousel-control-next {
-  top: 50%;
-  transform: translateY(-50%);
-  width: 2.75rem;               
-  opacity: 1;                  
+	top: 50%;
+	transform: translateY(-50%);
+	width: 2.75rem;
+	opacity: 1;
 }
 
-.custom-carousel .carousel-control-prev { left: -3.5rem; }  
-.custom-carousel .carousel-control-next { right: -3.5rem; } 
-.custom-carousel .carousel-indicators { bottom: -2.5rem; }
+.custom-carousel .carousel-control-prev {
+	left: -3.5rem;
+}
+
+.custom-carousel .carousel-control-next {
+	right: -3.5rem;
+}
+
+.custom-carousel .carousel-indicators {
+	bottom: -2.5rem;
+}
 
 /* Carousel populares */
 
-.custom-carousel2{                  
-	max-width: 85%; 
+.custom-carousel2 {
+	max-width: 85%;
 	margin: 100px auto 0;
 	position: relative;
 	overflow: visible;
 }
 
-.custom-carousel2 .card-img-top{
-  	width: 100%;
-  	aspect-ratio: 16/9;
-  	object-fit: cover;
-  	object-position: center;
+.custom-carousel2 .card-img-top {
+	width: 100%;
+	aspect-ratio: 16/9;
+	object-fit: cover;
+	object-position: center;
 }
 
-.custom-carousel2 .carousel-inner{
-  	overflow: hidden;
+.custom-carousel2 .carousel-inner {
+	overflow: hidden;
 }
 
-.custom-carousel2 .fixo{
- 	flex-wrap: nowrap;
+.custom-carousel2 .fixo {
+	flex-wrap: nowrap;
 }
 
 
 .custom-carousel2 .carousel-control-prev,
 .custom-carousel2 .carousel-control-next {
-  top: 50%;
-  transform: translateY(-50%);
-  width: 2.75rem;               
-  opacity: 1;                  
+	top: 50%;
+	transform: translateY(-50%);
+	width: 2.75rem;
+	opacity: 1;
 }
 
-.custom-carousel2 .carousel-control-prev { left: -3.5rem; }  
-.custom-carousel2 .carousel-control-next { right: -3.5rem; } 
+.custom-carousel2 .carousel-control-prev {
+	left: -3.5rem;
+}
+
+.custom-carousel2 .carousel-control-next {
+	right: -3.5rem;
+}
 
 
-.custom-carousel2 .carousel-indicators { bottom: -2.5rem; }
+.custom-carousel2 .carousel-indicators {
+	bottom: -2.5rem;
+}
 
 /* MOBILE */
-@media (max-width: 575.98px){
-  .custom-carousel2{
-    width: clamp(80px, 90vw, 260px); 
-    margin-inline: auto;             
-    position: relative;              
-  }
+@media (max-width: 575.98px) {
+	.custom-carousel2 {
+		width: clamp(80px, 90vw, 260px);
+		margin-inline: auto;
+		position: relative;
+	}
 
 }
 
 
 
+/* Aviso de login e Conta */
+.aviso {
+	margin: 100px auto 60px;
+	color: rgb(255, 255, 255);
+	text-align: center;
+}
 
+.botaov {
+	background-color: rgb(4, 143, 20);
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+	border-radius: 30px;
+	padding: 8px;
+	padding-left: 14px;
+	padding-right: 14px;
+	font-size: 10px;
+	font-weight: bold;
 
+}
