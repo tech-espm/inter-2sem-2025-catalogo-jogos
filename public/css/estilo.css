@@ -6,7 +6,7 @@ html,
 body {
 	/* Para fazer o rodapé ficar sempre na parte inferior da página ;) */
 	min-height: 100vh;
-	background-color: rgb(34, 30, 30);
+	background-color: rgb(13, 13, 13);
 }
 
 .limitador {
@@ -186,20 +186,39 @@ body {
 
 /* Aviso de login e Conta */
 .aviso {
+	max-width: 80%;
 	margin: 100px auto 60px;
+	padding: 15px 24px;
+	background-color: rgb(33, 37, 41);
 	color: rgb(255, 255, 255);
 	text-align: center;
 }
 
 .botaov {
-	background-color: rgb(4, 143, 20);
+	background-color: rgb(76, 175, 80);
 	text-decoration: none;
 	color: rgb(255, 255, 255);
-	border-radius: 30px;
-	padding: 8px;
-	padding-left: 14px;
-	padding-right: 14px;
-	font-size: 10px;
+	border-radius: 6px;
+	padding: 12px;
+	padding-left: 40px;
+	padding-right: 40px;
+	font-size: 14px;
 	font-weight: bold;
+}
 
+.botaov:hover {
+	background-color: rgb(31, 235, 106);
+}
+
+.separar{
+	margin-top: 20px;
+}
+
+.cadastrar{
+	text-decoration: underline;
+	color: rgb(255, 255, 255);
+}
+
+.cadastrar:hover{
+	color: rgb(62, 88, 237);
 }
