@@ -84,30 +84,32 @@ router.get("/jogo", wrap(async (req, res) => {
 
 router.get("/sobre", wrap(async (req, res) => {
 	let opcoes = {
-		titulo: "Sobre"
+		titulo: "Sobre",
 	};
+
+
 	res.render("index/sobre", opcoes);
 }));
 
 router.get("/wishlist", wrap(async (req, res) => {
 
-let usuario = {
-    id_user: 1,
-    nome_usuario: "Rafel",
-    genero_fav: "Ação",
-    wishlist: [
-        {
-            id_wishlist: 1,
-            id_jogo: 5,
-            nm_jogo: "Stardew Valley"
-        },
-        {
-            id_wishlist: 2,
-            id_jogo: 6,
-            nm_jogo: "Hollow Knight: Silksong"
-        }
-    ]
-};
+	let usuario = {
+		id_user: 1,
+		nome_usuario: "Rafel",
+		genero_fav: "Ação",
+		wishlist: [
+			{
+				id_wishlist: 1,
+				id_jogo: 5,
+				nm_jogo: "Stardew Valley"
+			},
+			{
+				id_wishlist: 2,
+				id_jogo: 6,
+				nm_jogo: "Hollow Knight: Silksong"
+			}
+		]
+	};
 
 
 	let produtosVindosDoBanco = usuario;
