@@ -182,6 +182,53 @@ body {
 
 }
 
+
+/* Aviso de login e Conta */
+.aviso {
+	max-width: 80%;
+	margin: 100px auto 60px;
+	padding: 15px 24px;
+	background-color: rgb(33, 37, 41);
+	color: rgb(255, 255, 255);
+	text-align: center;
+}
+
+
+.botaov {
+	background-color: rgb(76, 175, 80);
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+	border-radius: 6px;
+	padding: 12px;
+	padding-left: 40px;
+	padding-right: 40px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+
+.botaov:hover {
+	background-color: rgb(31, 235, 106);
+}
+
+.separar{
+	margin-top: 20px;
+}
+
+.cadastrar{
+	text-decoration: underline;
+	color: rgb(255, 255, 255);
+}
+
+.cadastrar:hover{
+	color: rgb(62, 88, 237);
+}
+
+
+
+
+
+
 /* CSS da pagina Sobre Nós */
 
 .div_descricao_projeto {
