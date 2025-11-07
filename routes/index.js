@@ -131,4 +131,22 @@ router.get("/wishlist", wrap(async (req, res) => {
 	res.render("index/wishlist", usuario);
 }));
 
+router.get("/login", wrap(async (req, res) => {
+	
+	let opcoes = {
+		titulo: "Login"
+	};
+
+	res.render("index/login", opcoes);
+}));
+
+router.get("/cadastro", wrap(async (req, res) => {
+	
+	let opcoes = {
+		titulo: "Cadastro"
+	};
+
+	res.render("index/cadastro", opcoes);
+}));
+
 module.exports = router;
