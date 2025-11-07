@@ -1,5 +1,7 @@
 const express = require("express");
 const wrap = require("express-async-error-wrapper");
+const sql = require("../data/sql");
+
 
 const router = express.Router();
 
@@ -102,6 +104,15 @@ router.get("/sobre", wrap(async (req, res) => {
 
 router.get("/wishlist", wrap(async (req, res) => {
 
+	let pessoas;
+
+	await sql.connect(async sql => {
+		// Tudo aqui dentro é executado com a conexão aberta!
+		pessoas = await sql.query("select id, nome, email, telefone from pessoa");
+		//...
+	})
+
+
 	let usuario = {
 		id_user: 1,
 		nome_usuario: "Rafel",
@@ -119,7 +130,6 @@ router.get("/wishlist", wrap(async (req, res) => {
 			}
 		]
 	};
-
 
 	let produtosVindosDoBanco = usuario;
 
