@@ -122,6 +122,7 @@ app.use((err, req, res, next) => {
 
 	res.render("erro", { mensagem: err.message });
 });
+// Conexão com o banco 
 
 sql.init({
 	connectionLimit: parseInt(process.env.sql_connectionLimit),
