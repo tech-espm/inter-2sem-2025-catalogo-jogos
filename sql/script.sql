@@ -1,0 +1,8 @@
+-- Caso ocorra algum problema no login, executar o código abaixo, para arrumar a senha do usuário root:
+-- ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+
+-- Esse script vale para o MySQL 8.x. Se seu MySQL for 5.x, precisa executar essa linha comentada:
+-- CREATE DATABASE IF NOT EXISTS catalogojogos;
+CREATE DATABASE IF NOT EXISTS catalogojogos DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_0900_ai_ci;
+
+USE catalogojogos;
