@@ -312,7 +312,7 @@ body {
     margin-bottom: 25px;
 }
 
-input {
+.inputado {
     width: 100%;
     padding: 10px;
     margin: 8px 0;
@@ -322,7 +322,7 @@ input {
     color: white;
 }
 
-input::placeholder {
+.inputado-placeholder {
     color: #d7d7d7;
 }
 
@@ -379,20 +379,6 @@ input::placeholder {
     margin-bottom: 25px;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    background: #363636;
-    border: none;
-    border-radius: 5px;
-    color: white;
-}
-
-input::placeholder {
-    color: #d7d7d7;
-}
-
 .botaologin {
     width: 100%;
     padding: 10px;
@@ -404,7 +390,7 @@ input::placeholder {
     cursor: pointer;
 }
 
-button:hover {
+.botaologin:hover {
     background: #5c5c5c;
 }
 
