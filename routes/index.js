@@ -7,57 +7,15 @@ const router = express.Router();
 
 // Rota da home
 router.get("/", wrap(async (req, res) => {
-	let jogos = [
-		{
-			id: 1,
-			nome: "Hollow Knight Silksong",
-			genero: "Aventura",
-			nota: 4.5,
-		},
-		{
-			id: 2,
-			nome: "Battlefield 6",
-			genero: "Aventura",
-			nota: 5.0,
-		},
-		{
-			id: 3,
-			nome: "Hades 2",
-			genero: "Aventura",
-			nota: 3.5,
-		},
-		{
-			id: 4,
-			nome: "Plants Vs Zombies: Replanted",
-			genero: "Arcade",
-			nota: 4.5,
-		},
-		{
-			id: 5,
-			nome: "Stardew valley",
-			genero: "Arcade",
-			nota: 5.0,
-		},
-		{
-			id: 6,
-			nome: "Mario Kart World",
-			genero: "Arcade",
-			nota: 5.0,
-		},
-		{
-			id: 7,
-			nome: "Escape from Duckov",
-			genero: "Arcade",
-			nota: 4.0,
-		},
-		{
-			id: 8,
-			nome: "Jurassic World Evolution 3",
-			genero: "Arcade",
-			nota: 5.0,
-		},
+	let jogos;
 
-	];
+	await sql.connect(async sql => {
+		// Tudo aqui dentro é executado com a conexão aberta!
+
+		jogos = await sql.query("select id, nome, genero, nota from jogo");
+
+		//...
+	});
 
 	let opcoes = {
 		jogos: jogos
@@ -144,7 +102,8 @@ router.get("/wishlist", wrap(async (req, res) => {
 router.get("/login", wrap(async (req, res) => {
 	
 	let opcoes = {
-		titulo: "Login"
+		titulo: "Login",
+		layout: "layout_secundario"
 	};
 
 	res.render("index/login", opcoes);
@@ -153,7 +112,8 @@ router.get("/login", wrap(async (req, res) => {
 router.get("/cadastro", wrap(async (req, res) => {
 	
 	let opcoes = {
-		titulo: "Cadastro"
+		titulo: "Cadastro",
+		layout: "layout_secundario"
 	};
 
 	res.render("index/cadastro", opcoes);
