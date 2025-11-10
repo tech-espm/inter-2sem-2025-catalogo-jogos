@@ -283,9 +283,35 @@ body {
 
 /* Perfil do usuário */
 .perfil{
-	margin-left: 50px;
+	margin: 10px auto ;
 	color: white;
 	font-family: Arial, Helvetica, sans-serif;
+	
+}
+
+.container2 {
+    padding: 40px;
+    background: linear-gradient(to bottom, #252525, #141414);
+    border-radius: 8px;
+    width: 300px;
+}
+
+.pinputs{
+	margin-top: 12px;
+	margin-bottom: 0px;
+}
+
+.inputado2 {
+    width: 100%;
+    padding: 10px;
+    background: #363636;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.bio {
+	padding: 45px;
 }
 
 
