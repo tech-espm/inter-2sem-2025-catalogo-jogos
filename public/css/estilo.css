@@ -289,3 +289,138 @@ body {
 
 
 
+/*Página cadastro */
+
+.cadastro {
+    margin: 5px auto;
+    font-family: Arial, sans-serif;
+    background: #1b1b1b;
+    color: white;
+    justify-content: center;
+}
+
+.container {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(to bottom, #252525, #141414);
+    border-radius: 8px;
+    width: 300px;
+}
+
+.h1cad {
+    margin-bottom: 25px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    background: #363636;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+input::placeholder {
+    color: #d7d7d7;
+}
+
+.botaocad {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #4b4b4b;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.botaocad:hover {
+    background: #5c5c5c;
+}
+
+.login-text {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.login-text a {
+    color: #8ab4ff;
+    text-decoration: none;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+/* fim página cadastro*/
+
+/*página login*/
+
+.login {
+    margin: 5px auto;
+    font-family: Arial, sans-serif;
+    background: #1b1b1b;
+    color: white;
+    justify-content: center;
+}
+
+.container {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(to bottom, #252525, #141414);
+    border-radius: 8px;
+    width: 300px;
+}
+
+.h1login {
+    margin-bottom: 25px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    background: #363636;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+input::placeholder {
+    color: #d7d7d7;
+}
+
+.botaologin {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #4b4b4b;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #5c5c5c;
+}
+
+.login-text {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.login-text a {
+    color: #8ab4ff;
+    text-decoration: none;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+/* fim da página login */
+
+
