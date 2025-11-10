@@ -293,7 +293,7 @@ body {
 /*Página cadastro */
 
 .cadastro {
-    margin: 5px auto;
+    margin: 69px auto 0px auto;
     font-family: Arial, sans-serif;
     background: #1b1b1b;
     color: white;
@@ -360,7 +360,7 @@ body {
 /*página login*/
 
 .login {
-    margin: 5px auto;
+    margin: 69px auto 0px auto;
     font-family: Arial, sans-serif;
     background: #1b1b1b;
     color: white;
