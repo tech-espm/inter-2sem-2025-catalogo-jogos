@@ -102,7 +102,8 @@ router.get("/wishlist", wrap(async (req, res) => {
 router.get("/login", wrap(async (req, res) => {
 	
 	let opcoes = {
-		titulo: "Login"
+		titulo: "Login",
+		layout: "layout_secundario"
 	};
 
 	res.render("index/login", opcoes);
@@ -111,7 +112,8 @@ router.get("/login", wrap(async (req, res) => {
 router.get("/cadastro", wrap(async (req, res) => {
 	
 	let opcoes = {
-		titulo: "Cadastro"
+		titulo: "Cadastro",
+		layout: "layout_secundario"
 	};
 
 	res.render("index/cadastro", opcoes);
