@@ -20,8 +20,8 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `catalogojogos`.`USUARIO` (
   `id_usuario` INT NOT NULL,
-  `nm_usuario` VARCHAR(45) NOT NULL,
-  `email_usuario` VARCHAR(45) NOT NULL,
+  `nm_usuario` VARCHAR(30) NOT NULL,
+  `email_usuario` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id_usuario`))
 ENGINE = InnoDB;
 
@@ -31,8 +31,8 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `catalogojogos`.`SUBGENERO_JOGO` (
   `id_subgenero` INT NOT NULL,
-  `nm_subgenero` VARCHAR(45) NOT NULL,
-  `desc_subgenero` VARCHAR(45) NOT NULL,
+  `nm_subgenero` VARCHAR(100) NOT NULL,
+  `desc_subgenero` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id_subgenero`))
 ENGINE = InnoDB;
 
@@ -43,7 +43,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `catalogojogos`.`GENERO_JOGO` (
   `id_genero_jogo` INT NOT NULL,
   `nm_genero_jogo` VARCHAR(45) NOT NULL,
-  `desc_genero_jogo` VARCHAR(45) NOT NULL,
+  `desc_genero_jogo` VARCHAR(255) NOT NULL,
   `id_subgenero` INT NOT NULL,
   PRIMARY KEY (`id_genero_jogo`),
   INDEX `id_subgenero_idx` (`id_subgenero` ASC),
@@ -60,8 +60,8 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `catalogojogos`.`ESTÚDIO` (
   `id_estudio` INT NOT NULL,
-  `nm_estudio` VARCHAR(45) NOT NULL,
-  `pais_estudio` VARCHAR(45) NULL,
+  `nm_estudio` VARCHAR(255) NOT NULL,
+  `pais_estudio` VARCHAR(50) NULL,
   PRIMARY KEY (`id_estudio`))
 ENGINE = InnoDB;
 
@@ -80,16 +80,16 @@ ENGINE = InnoDB;
 -- Table `catalogojogos`.`JOGOS`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `catalogojogos`.`JOGOS` (
-  `id_jogo` INT NOT NULL,
+  `id_jogo` INT NOT NULL AUTO_INCREMENT ,
   `id_genero_jogo` INT NOT NULL,
   `id_plataforma` INT NOT NULL,
   `id_estudio` INT NOT NULL,
   `id_idioma` INT NOT NULL,
-  `nm_jogo` VARCHAR(45) NOT NULL,
+  `nm_jogo` VARCHAR(255) NOT NULL,
   `nota_jogo` FLOAT NOT NULL,
   `duracao_jogo` INT NOT NULL,
-  `classIndicativa_jogo` VARCHAR(45) NOT NULL,
-  `desc_jogo` VARCHAR(45) NOT NULL,
+  `classIndicativa_jogo` VARCHAR(10) NOT NULL,
+  `desc_jogo` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id_jogo`),
   INDEX `id_genero_jogo_idx` (`id_genero_jogo` ASC),
   INDEX `id_plataforma_idx` (`id_plataforma` ASC),
@@ -125,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `catalogojogos`.`AVALIACOES` (
   `id_avaliacao` INT NOT NULL,
   `id_usuario` INT NOT NULL,
   `nota_avaliacao` FLOAT NOT NULL,
-  `desc_avaliacao` VARCHAR(45) NULL,
+  `desc_avaliacao` VARCHAR(300) NULL,
   `id_jogo` INT NOT NULL,
   PRIMARY KEY (`id_avaliacao`),
   INDEX `id_usuario_idx` (`id_usuario` ASC),
@@ -140,4 +140,25 @@ CREATE TABLE IF NOT EXISTS `catalogojogos`.`AVALIACOES` (
     REFERENCES `catalogojogos`.`JOGOS` (`id_jogo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+
+-- Comando para remover a coluna de nota da tabela JOGOS
+ALTER TABLE JOGOS DROP COLUMN nota_jogo;
+
+-- Nova estrutura da tabela JOGOS (sem a coluna nota_jogo)
+CREATE TABLE IF NOT EXISTS `catalogojogos`.`JOGOS` (
+  `id_jogo` INT NOT NULL AUTO_INCREMENT,
+  `id_genero_jogo` INT NOT NULL,
+  `id_plataforma` INT NOT NULL,
+  `id_estudio` INT NOT NULL,
+  `id_idioma` INT NOT NULL,
+  `nm_jogo` VARCHAR(45) NOT NULL,
+  `duracao_jogo` INT NOT NULL,
+  `classIndicativa_jogo` VARCHAR(45) NOT NULL,
+  `desc_jogo` VARCHAR(300) NOT NULL, -- Aumentei o tamanho para descrições mais completas
+  PRIMARY KEY (`id_jogo`),
+  -- ... (constraints e indexes permanecem os mesmos) ...
+);
+
+
 ENGINE = InnoDB;
+
