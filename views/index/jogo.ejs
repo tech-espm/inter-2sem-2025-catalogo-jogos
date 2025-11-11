@@ -9,3 +9,80 @@
 <p>
 	Nota: <%= jogo.nota %>
 </p>
+<div class="container-fluid">
+	<div class="row">
+
+		<div class="col-sm-12">
+			<div>
+				<label for="descricao_avaliacao_user">Descricao avaliacao</label>
+				<input type="text" id="descricao_avaliacao_user" />
+			</div>
+
+			<div>
+				<label for="avaliacao_user">Avalie o jogo:</label>
+				<select id="avaliacao_user">
+					<option value="0">0 estrela</option>
+					<option value="1">1 estrela</option>
+					<option value="2">2 estrela</option>
+					<option value="3">3 estrela</option>
+					<option value="4">4 estrela</option>
+					<option value="5">5 estrela</option>
+				</select>
+			</div>
+
+			<button type="button" onclick="cadastrarAvalicao()">
+				cadastrar Avaliação
+			</button>
+		</div>
+
+	</div>
+</div>
+
+<script type="text/javascript">
+
+	async function cadastrarAvalicao() {
+
+		let avaliacao_user = document.getElementById("avaliacao_user").value;
+		let descricao_avaliacao_user = document.getElementById("descricao_avaliacao_user").value;
+
+		if (!avaliacao_user) {
+			alert("estrelas inválido!");
+			return;
+		}
+
+		if (!descricao_avaliacao_user) {
+			alert("descricao inválido!");
+			return;
+		}
+
+		let avalicao = {
+			avaliacao_user: avaliacao_user,
+			descricao_avaliacao_user: descricao_avaliacao_user
+		};
+
+		try {
+
+			let response = await fetch("/api/cadastrar", {
+				method: "POST",
+				body: JSON.stringify(avalicao),
+				headers: {
+					"content-type": "application/json"
+				}
+			});
+
+			if (!response.ok) {
+				alert("Ocorreu um erro ao cadastrar :(");
+				return;
+			}
+
+			avaliacao_user.value = "";
+			descricao_avaliacao_user.value = "";
+
+			alert("Ocorreu um erro ao cadastrar :(");
+
+		} catch (ex) {
+			alert("Ocorreu um erro de rede ao criar a pessoa: " + ex.message)
+		}
+	}
+
+</script>

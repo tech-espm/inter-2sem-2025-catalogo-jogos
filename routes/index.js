@@ -12,8 +12,8 @@ router.get("/", wrap(async (req, res) => {
 	await sql.connect(async sql => {
 		// Tudo aqui dentro é executado com a conexão aberta!
 
-		jogos = await sql.query("select id, nome, genero, nota from jogo");
-
+		jogos = await sql.query("select * from jogos");
+		console.log(jogos)
 		//...
 	});
 
@@ -24,26 +24,8 @@ router.get("/", wrap(async (req, res) => {
 	res.render("index/index", opcoes);
 }));
 
-router.get("/jogo", wrap(async (req, res) => {
-	let id = parseInt(req.query["id"]);
-
-	let jogo = {
-		id: id,
-		nome: "Hollow Knight Silksong",
-		genero: "Aventura",
-		nota: 4.5,
-	};
-
-	let opcoes = {
-		titulo: jogo.nome,
-		jogo: jogo
-	};
-
-	res.render("index/jogo", opcoes);
-}));
-
 router.get("/perfil", wrap(async (req, res) => {
-	
+
 	let opcoes = {
 		titulo: "Perfil"
 	};
@@ -100,7 +82,7 @@ router.get("/wishlist", wrap(async (req, res) => {
 }));
 
 router.get("/login", wrap(async (req, res) => {
-	
+
 	let opcoes = {
 		titulo: "Login",
 		layout: "layout_secundario"
@@ -110,7 +92,7 @@ router.get("/login", wrap(async (req, res) => {
 }));
 
 router.get("/cadastro", wrap(async (req, res) => {
-	
+
 	let opcoes = {
 		titulo: "Cadastro",
 		layout: "layout_secundario"
@@ -118,5 +100,44 @@ router.get("/cadastro", wrap(async (req, res) => {
 
 	res.render("index/cadastro", opcoes);
 }));
+
+router.get("/jogo", wrap(async (req, res) => {
+	let opcoes = {
+		titulo: "",
+	};
+
+	res.render("index/jogo", opcoes);
+}));
+
+router.post("/api/cadastrar", wrap(async (req, res) => {
+
+	let avalicao_jogo = req.body;
+
+	if (!avalicao_jogo.avaliacao_user) {
+		res.status(400).json("Invalido!");
+		return;
+	};
+	if (!avalicao_jogo.descricao_avaliacao_user) {
+		res.status(400).json("Invalido!");
+		return;
+	}
+
+	await sql.connect(async sql => {
+		// Tudo aqui dentro é executado com a conexão aberta!
+
+		let parametros = [
+			avalicao_jogo.avaliacao_user,
+			avalicao_jogo.descricao_avaliacao_user
+		];
+
+		await sql.query("insert into jogos_avaliados (avaliacao_user, descricao_avaliacao_user) values (?,?)", parametros);
+
+		//...
+	});
+
+	res.json(True)
+
+}));
+
 
 module.exports = router;
