@@ -86,27 +86,27 @@ INSERT INTO USUARIO (id_usuario, nm_usuario, email_usuario) VALUES
 (10, 'Sofia_Coop', 'sofia.coop@email.com');
 
 -- 3.7. INSERTS PARA A TABELA JOGOS (Depende de GENERO_JOGO, PLATAFORMA, ESTÚDIO, IDIOMA)
-INSERT INTO JOGOS (id_jogo, id_genero_jogo, id_plataforma, id_estudio, id_idioma, nm_jogo, duracao_jogo, classIndicativa_jogo, desc_jogo) VALUES
-(1, 1, 1, 1, 1, 'Hollow Knight: Silksong', 30, '10+', 'Aguardada sequência do aclamado metroidvania.'),
-(2, 2, 1, 2, 1, 'Battlefield 6', 40, '18+', 'Guerra moderna em larga escala com destruição massiva.'),
-(3, 3, 1, 3, 9, 'Hades', 25, '12+', 'Desafie o deus dos mortos e fuja do Submundo da mitologia grega.'),
-(4, 4, 1, 4, 9, 'Plants vs. Zombies: Replanted', 20, 'Livre', 'Defenda seu jardim de hordas de zumbis com novas plantas.'),
-(5, 5, 1, 5, 9, 'Stardew Valley', 150, 'Livre', 'Herde uma fazenda e construa uma nova vida no campo.'),
-(6, 6, 4, 6, 9, 'Mario Kart World', 30, 'Livre', 'Corridas de kart em um mundo aberto com pistas interligadas.'),
-(7, 2, 1, 7, 8, 'Escape from Duckvov', 150, '18+', 'FPS tático e realista com foco em extração e sobrevivência.'),
-(8, 5, 1, 8, 1, 'Jurassic World Evolution 3', 60, '12+', 'Construa e gerencie o mais avançado parque de dinossauros.'),
-(9, 3, 1, 16, 1, 'Baldurs Gate 3', 100, '18+', 'Volte aos Reinos Esquecidos em um conto de amizade e traição.'),
-(10, 3, 1, 12, 1, 'The Witcher 3: Wild Hunt', 100, '16+', 'Cace monstros como o bruxo Geralt de Rivia em um vasto mundo aberto.'),
-(11, 1, 2, 10, 9, 'The Last of Us Part I', 15, '18+', 'Sobreviva a uma jornada brutal em um mundo pós-pandêmico.'),
-(12, 1, 2, 10, 9, 'God of War Ragnarök', 30, '18+', 'Kratos e Atreus enfrentam o fim dos tempos nórdico.'),
-(13, 1, 4, 6, 9, 'The Legend of Zelda: Tears of the Kingdom', 80, '10+', 'Explore os céus e a superfície de Hyrule em uma nova aventura.'),
-(14, 1, 1, 11, 1, 'Elden Ring', 80, '16+', 'Torne-se o Lorde Prístino nas Terras Intermédias.'),
-(15, 7, 3, 9, 1, 'Red Dead Redemption 2', 60, '18+', 'Uma história épica de honra e lealdade no fim da era do Velho Oeste.'),
-(16, 1, 1, 1, 1, 'Hollow Knight', 30, '10+', 'Explore um vasto reino de insetos e heróis.'),
-(17, 12, 1, 7, 8, 'Escape from Tarkov', 200, '18+', 'FPS hardcore com elementos de sobrevivência e MMO.'),
-(18, 3, 2, 15, 9, 'Dragons Dogma 2', 40, '16+', 'RPG de ação com peões controlados por IA em um mundo de fantasia.'),
-(19, 2, 1, 2, 1, 'Battlefield 2042', 50, '16+', 'Guerra total em um futuro próximo com mapas dinâmicos.'),
-(20, 5, 1, 14, 9, 'Minecraft', 100, 'Livre', 'Um mundo aberto de blocos para construir, minerar e sobreviver.');
+INSERT INTO JOGOS (id_jogo, id_genero_jogo, id_plataforma, id_estudio, id_idioma, nm_jogo, duracao_jogo, classIndicativa_jogo, desc_jogo, dt_lancamento) VALUES
+(1, 1, 1, 1, 1, 'Hollow Knight: Silksong', 30, '10+', 'Aguardada sequência do aclamado metroidvania.', '2025-09-04'),
+(2, 2, 1, 2, 1, 'Battlefield 6', 40, '18+', 'Guerra moderna em larga escala com destruição massiva.', '2025-08-09'),
+(3, 3, 1, 3, 9, 'Hades', 25, '12+', 'Desafie o deus dos mortos e fuja do Submundo da mitologia grega.', '2019-12-10'),
+(4, 4, 1, 4, 9, 'Plants vs. Zombies: Replanted', 20, 'Livre', 'Defenda seu jardim de hordas de zumbis com novas plantas.', '2025-10-23'),
+(5, 5, 1, 5, 9, 'Stardew Valley', 150, 'Livre', 'Herde uma fazenda e construa uma nova vida no campo.', '2016-02-26'),
+(6, 6, 4, 6, 9, 'Mario Kart World', 30, 'Livre', 'Corridas de kart em um mundo aberto com pistas interligadas.', '2025-06-05'),
+(7, 2, 1, 7, 8, 'Escape from Duckvov', 150, '18+', 'FPS tático e realista com foco em extração e sobrevivência.', '2025-01-24'),
+(8, 5, 1, 8, 1, 'Jurassic World Evolution 3', 60, '12+', 'Construa e gerencie o mais avançado parque de dinossauros.', '2025-10-21'),
+(9, 3, 1, 16, 1, 'Baldurs Gate 3', 100, '18+', 'Volte aos Reinos Esquecidos em um conto de amizade e traição.', '2023-08-03'),
+(10, 3, 1, 12, 1, 'The Witcher 3: Wild Hunt', 100, '16+', 'Cace monstros como o bruxo Geralt de Rivia em um vasto mundo aberto.', '2015-05-18'),
+(11, 1, 2, 10, 9, 'The Last of Us Part I', 15, '18+', 'Sobreviva a uma jornada brutal em um mundo pós-pandêmico.', '2022-09-02'),
+(12, 1, 2, 10, 9, 'God of War Ragnarök', 30, '18+', 'Kratos e Atreus enfrentam o fim dos tempos nórdico.', '2022-11-09'),
+(13, 1, 4, 6, 9, 'The Legend of Zelda: Tears of the Kingdom', 80, '10+', 'Explore os céus e a superfície de Hyrule em uma nova aventura.', '2023-05-12'),
+(14, 1, 1, 11, 1, 'Elden Ring', 80, '16+', 'Torne-se o Lorde Prístino nas Terras Intermédias.', '2022-02-25'),
+(15, 7, 3, 9, 1, 'Red Dead Redemption 2', 60, '18+', 'Uma história épica de honra e lealdade no fim da era do Velho Oeste.', '2018-10-26'),
+(16, 1, 1, 1, 1, 'Hollow Knight', 30, '10+', 'Explore um vasto reino de insetos e heróis.', '2017-02-24'),
+(17, 12, 1, 7, 8, 'Escape from Tarkov', 200, '18+', 'FPS hardcore com elementos de sobrevivência e MMO.', '2017-07-28'),
+(18, 3, 2, 15, 9, 'Dragons Dogma 2', 40, '16+', 'RPG de ação com peões controlados por IA em um mundo de fantasia.', '2024-03-21'),
+(19, 2, 1, 2, 1, 'Battlefield 2042', 50, '16+', 'Guerra total em um futuro próximo com mapas dinâmicos.', '2021-11-12'),
+(20, 5, 1, 14, 9, 'Minecraft', 100, 'Livre', 'Um mundo aberto de blocos para construir, minerar e sobreviver.', '2011-11-18');
 
 -- 3.8. INSERTS PARA A TABELA AVALIACOES (Depende de USUARIO e JOGOS)
 INSERT INTO AVALIACOES (id_avaliacao, id_usuario, nota_avaliacao, desc_avaliacao, id_jogo) VALUES
