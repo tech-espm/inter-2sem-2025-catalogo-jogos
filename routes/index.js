@@ -13,7 +13,6 @@ router.get("/", wrap(async (req, res) => {
 		// Tudo aqui dentro é executado com a conexão aberta!
 
 		jogos = await sql.query("select * from jogos");
-		console.log(jogos)
 		//...
 	});
 

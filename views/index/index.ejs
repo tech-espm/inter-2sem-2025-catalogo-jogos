@@ -5,7 +5,7 @@
 	<div id="carousel1" class="carousel slide custom-carousel" data-bs-ride="false" data-bs-wrap="true">
 		<h1 class="subtitulo mt-3">Lançamentos</h1>
 		<div class="carousel-indicators">
-			<% for (let contador=0; contador < 4; contador++) { %>
+			<% for (let contador=0; contador < 5; contador++) { %>
 				<% if (contador === 0) { %>
 					<button type="button" data-bs-target="#carousel1" data-bs-slide-to="<%= contador %>" class="active"
 						aria-current="true" aria-label="Slide <%= contador + 1 %>">
@@ -19,7 +19,7 @@
 		</div>
 
 		<div class="carousel-inner">
-			<% for (let contador=0; contador < jogos.length; contador++) { %>
+			<% for (let contador=0; contador < 5; contador++) { %>
 				<div class="carousel-item <%= (contador === 0 ? 'active' : '') %>">
 					<img src="/public/img/CapaJogos/<%= jogos[contador].id_jogo %>.jpg" class="d-block w-100" alt="">
 				</div>
@@ -63,7 +63,7 @@
 				<a class="card h-100" href="/jogo?id=<%= jogos[i].id_jogo %>">
 					<img src="/public/img/CapaJogos/<%= jogos[i].id_jogo %>.jpg" class="card-img-top" alt="">
 					<div class="card-body">
-						<p class="card-text">RICARDO</p>
+						<p class="card-text"><%= jogos[i].nm_jogo%></p>
 					</div>
 				</a>
 			</div>
