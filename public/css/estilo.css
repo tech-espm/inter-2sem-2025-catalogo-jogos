@@ -314,6 +314,22 @@ body {
 	padding: 45px;
 }
 
+.botaocad2 {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background: #4b4b4b;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.botaocad2:hover {
+    background: #5c5c5c;
+}
+
+
 
 
 /*Página cadastro */
