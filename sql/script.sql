@@ -12,14 +12,14 @@ USE catalogojogos;
 
 -- 2.1. Tabela `catalogojogos`.`PLATAFORMA`
 CREATE TABLE IF NOT EXISTS `catalogojogos`.`PLATAFORMA` (
-  `id_plataforma` INT NOT NULL,
+  `id_plataforma` INT NOT NULL AUTO_INCREMENT,
   `nm_plataforma` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_plataforma`))
 ENGINE = InnoDB;
 
 -- 2.2. Tabela `catalogojogos`.`USUARIO`
 CREATE TABLE IF NOT EXISTS `catalogojogos`.`USUARIO` (
-  `id_usuario` INT NOT NULL,
+  `id_usuario` INT NOT NULL AUTO_INCREMENT,
   `nm_usuario` VARCHAR(30) NOT NULL,
   `email_usuario` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id_usuario`))
@@ -27,7 +27,7 @@ ENGINE = InnoDB;
 
 -- 2.3. Tabela `catalogojogos`.`SUBGENERO_JOGO`
 CREATE TABLE IF NOT EXISTS `catalogojogos`.`SUBGENERO_JOGO` (
-  `id_subgenero` INT NOT NULL,
+  `id_subgenero` INT NOT NULL AUTO_INCREMENT,
   `nm_subgenero` VARCHAR(100) NOT NULL,
   `desc_subgenero` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id_subgenero`))
@@ -35,7 +35,7 @@ ENGINE = InnoDB;
 
 -- 2.4. Tabela `catalogojogos`.`GENERO_JOGO` (Depende de SUBGENERO_JOGO)
 CREATE TABLE IF NOT EXISTS `catalogojogos`.`GENERO_JOGO` (
-  `id_genero_jogo` INT NOT NULL,
+  `id_genero_jogo` INT NOT NULL AUTO_INCREMENT,
   `nm_genero_jogo` VARCHAR(45) NOT NULL,
   `desc_genero_jogo` VARCHAR(255) NOT NULL,
   `id_subgenero` INT NOT NULL,
@@ -50,7 +50,7 @@ ENGINE = InnoDB;
 
 -- 2.5. Tabela `catalogojogos`.`ESTÚDIO`
 CREATE TABLE IF NOT EXISTS `catalogojogos`.`ESTÚDIO` (
-  `id_estudio` INT NOT NULL,
+  `id_estudio` INT NOT NULL AUTO_INCREMENT,
   `nm_estudio` VARCHAR(255) NOT NULL,
   `pais_estudio` VARCHAR(50) NULL,
   PRIMARY KEY (`id_estudio`))
@@ -58,7 +58,7 @@ ENGINE = InnoDB;
 
 -- 2.6. Tabela `catalogojogos`.`IDIOMA`
 CREATE TABLE IF NOT EXISTS `catalogojogos`.`IDIOMA` (
-  `id_idioma` INT NOT NULL,
+  `id_idioma` INT NOT NULL AUTO_INCREMENT,
   `nm_idioma` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_idioma`))
 ENGINE = InnoDB;
@@ -106,7 +106,7 @@ ENGINE = InnoDB;
 
 -- 2.8. Tabela `catalogojogos`.`AVALIACOES` (Depende de USUARIO e JOGOS)
 CREATE TABLE IF NOT EXISTS `catalogojogos`.`AVALIACOES` (
-  `id_avaliacao` INT NOT NULL,
+  `id_avaliacao` INT NOT NULL AUTO_INCREMENT,
   `id_usuario` INT NOT NULL,
   `nota_avaliacao` FLOAT NOT NULL,
   `desc_avaliacao` VARCHAR(300) NULL,
@@ -126,4 +126,8 @@ CREATE TABLE IF NOT EXISTS `catalogojogos`.`AVALIACOES` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+CREATE TABLE IF NOT EXISTS `catalogojogos`.`WISHLIST` (
+  `id_usuario` INT NOT NULL,
+  `id_jogo` INT NOT NULL,
+  `dt_adicionado` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
