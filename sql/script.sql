@@ -126,7 +126,26 @@ CREATE TABLE IF NOT EXISTS `catalogojogos`.`AVALIACOES` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+CREATE TABLE IF NOT EXISTS `catalogojogos`.`WISHLIST` (
+  `id_usuario` INT NOT NULL,
+  `id_jogo` INT NOT NULL,
+  `dt_adicionado` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
+  PRIMARY KEY (`id_usuario`, `id_jogo`),
 
+  CONSTRAINT `fk_wishlist_usuario`
+    FOREIGN KEY (`id_usuario`)
+    REFERENCES `catalogojogos`.`USUARIO` (`id_usuario`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  CONSTRAINT `fk_wishlist_jogo`
+    FOREIGN KEY (`id_jogo`)
+    REFERENCES `catalogojogos`.`JOGOS` (`id_jogo`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+)
 ENGINE = InnoDB;
+
+
 

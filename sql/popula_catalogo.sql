@@ -131,4 +131,5 @@ INSERT INTO AVALIACOES (id_avaliacao, id_usuario, nota_avaliacao, desc_avaliacao
 (19, 9, 3.4, 'Melhorou muito após o lançamento, mas ainda divide opiniões.', 19),
 (20, 10, 4.8, 'Infinitas possibilidades. Um jogo para todas as idades.', 20);
 
+
 -- FIM DO SCRIPT.
