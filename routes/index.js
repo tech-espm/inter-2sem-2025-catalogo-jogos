@@ -43,14 +43,6 @@ router.get("/sobre", wrap(async (req, res) => {
 
 router.get("/wishlist", wrap(async (req, res) => {
 
-	let pessoas;
-
-	await sql.connect(async sql => {
-		// Tudo aqui dentro é executado com a conexão aberta!
-		pessoas = await sql.query("select id, nome, email, telefone from pessoa");
-		//...
-	})
-
 
 	let usuario = {
 		id_user: 1,
@@ -101,13 +93,26 @@ router.get("/cadastro", wrap(async (req, res) => {
 }));
 
 router.get("/jogo", wrap(async (req, res) => {
+
+	let jogos;
+
+	await sql.connect(async sql => {
+		// Tudo aqui dentro é executado com a conexão aberta!
+
+		jogos = await sql.query("select * from jogos");
+		//...
+	});
 	let opcoes = {
 		titulo: "",
+		jogos: jogos
 	};
+
 
 	res.render("index/jogo", opcoes);
 }));
 
+
+// ------------- API -------------------------------//
 router.post("/api/cadastrar", wrap(async (req, res) => {
 
 	let avalicao_jogo = req.body;
@@ -125,11 +130,13 @@ router.post("/api/cadastrar", wrap(async (req, res) => {
 		// Tudo aqui dentro é executado com a conexão aberta!
 
 		let parametros = [
+			id_user = 1,
 			avalicao_jogo.avaliacao_user,
-			avalicao_jogo.descricao_avaliacao_user
+			avalicao_jogo.descricao_avaliacao_user,
+			id_jogo = 15
 		];
 
-		await sql.query("insert into jogos_avaliados (avaliacao_user, descricao_avaliacao_user) values (?,?)", parametros);
+		await sql.query("insert into avaliacoes (id_user,avaliacao_user, descricao_avaliacao_user, id_jogo) values (?,?,?,?)", parametros);
 
 		//...
 	});

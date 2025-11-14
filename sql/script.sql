@@ -127,6 +127,3 @@ CREATE TABLE IF NOT EXISTS `catalogojogos`.`AVALIACOES` (
 ENGINE = InnoDB;
 
 
-
-ENGINE = InnoDB;
-
