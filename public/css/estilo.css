@@ -283,17 +283,59 @@ body {
 
 /* Perfil do usuário */
 .perfil{
-	margin-left: 50px;
+	margin: 10px auto ;
 	color: white;
 	font-family: Arial, Helvetica, sans-serif;
+	
 }
+
+.container2 {
+    padding: 40px;
+    background: linear-gradient(to bottom, #252525, #141414);
+    border-radius: 8px;
+    width: 300px;
+}
+
+.pinputs{
+	margin-top: 12px;
+	margin-bottom: 0px;
+}
+
+.inputado2 {
+    width: 100%;
+    padding: 10px;
+    background: #363636;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.bio {
+	padding: 45px;
+}
+
+.botaocad2 {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background: #4b4b4b;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.botaocad2:hover {
+    background: #5c5c5c;
+}
+
 
 
 
 /*Página cadastro */
 
 .cadastro {
-    margin: 5px auto;
+    margin: 69px auto 0px auto;
     font-family: Arial, sans-serif;
     background: #1b1b1b;
     color: white;
@@ -312,7 +354,7 @@ body {
     margin-bottom: 25px;
 }
 
-input {
+.inputado {
     width: 100%;
     padding: 10px;
     margin: 8px 0;
@@ -322,7 +364,7 @@ input {
     color: white;
 }
 
-input::placeholder {
+.inputado-placeholder {
     color: #d7d7d7;
 }
 
@@ -360,7 +402,7 @@ input::placeholder {
 /*página login*/
 
 .login {
-    margin: 5px auto;
+    margin: 69px auto 0px auto;
     font-family: Arial, sans-serif;
     background: #1b1b1b;
     color: white;
@@ -379,20 +421,6 @@ input::placeholder {
     margin-bottom: 25px;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    background: #363636;
-    border: none;
-    border-radius: 5px;
-    color: white;
-}
-
-input::placeholder {
-    color: #d7d7d7;
-}
-
 .botaologin {
     width: 100%;
     padding: 10px;
@@ -404,7 +432,7 @@ input::placeholder {
     cursor: pointer;
 }
 
-button:hover {
+.botaologin:hover {
     background: #5c5c5c;
 }
 

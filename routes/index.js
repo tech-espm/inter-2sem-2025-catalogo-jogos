@@ -7,57 +7,14 @@ const router = express.Router();
 
 // Rota da home
 router.get("/", wrap(async (req, res) => {
-	let jogos = [
-		{
-			id: 1,
-			nome: "Hollow Knight Silksong",
-			genero: "Aventura",
-			nota: 4.5,
-		},
-		{
-			id: 2,
-			nome: "Battlefield 6",
-			genero: "Aventura",
-			nota: 5.0,
-		},
-		{
-			id: 3,
-			nome: "Hades 2",
-			genero: "Aventura",
-			nota: 3.5,
-		},
-		{
-			id: 4,
-			nome: "Plants Vs Zombies: Replanted",
-			genero: "Arcade",
-			nota: 4.5,
-		},
-		{
-			id: 5,
-			nome: "Stardew valley",
-			genero: "Arcade",
-			nota: 5.0,
-		},
-		{
-			id: 6,
-			nome: "Mario Kart World",
-			genero: "Arcade",
-			nota: 5.0,
-		},
-		{
-			id: 7,
-			nome: "Escape from Duckov",
-			genero: "Arcade",
-			nota: 4.0,
-		},
-		{
-			id: 8,
-			nome: "Jurassic World Evolution 3",
-			genero: "Arcade",
-			nota: 5.0,
-		},
+	let jogos;
 
-	];
+	await sql.connect(async sql => {
+		// Tudo aqui dentro é executado com a conexão aberta!
+
+		jogos = await sql.query("select * from jogos");
+		//...
+	});
 
 	let opcoes = {
 		jogos: jogos
@@ -66,26 +23,8 @@ router.get("/", wrap(async (req, res) => {
 	res.render("index/index", opcoes);
 }));
 
-router.get("/jogo", wrap(async (req, res) => {
-	let id = parseInt(req.query["id"]);
-
-	let jogo = {
-		id: id,
-		nome: "Hollow Knight Silksong",
-		genero: "Aventura",
-		nota: 4.5,
-	};
-
-	let opcoes = {
-		titulo: jogo.nome,
-		jogo: jogo
-	};
-
-	res.render("index/jogo", opcoes);
-}));
-
 router.get("/perfil", wrap(async (req, res) => {
-	
+
 	let opcoes = {
 		titulo: "Perfil"
 	};
@@ -142,21 +81,62 @@ router.get("/wishlist", wrap(async (req, res) => {
 }));
 
 router.get("/login", wrap(async (req, res) => {
-	
+
 	let opcoes = {
-		titulo: "Login"
+		titulo: "Login",
+		layout: "layout_secundario"
 	};
 
 	res.render("index/login", opcoes);
 }));
 
 router.get("/cadastro", wrap(async (req, res) => {
-	
+
 	let opcoes = {
-		titulo: "Cadastro"
+		titulo: "Cadastro",
+		layout: "layout_secundario"
 	};
 
 	res.render("index/cadastro", opcoes);
 }));
+
+router.get("/jogo", wrap(async (req, res) => {
+	let opcoes = {
+		titulo: "",
+	};
+
+	res.render("index/jogo", opcoes);
+}));
+
+router.post("/api/cadastrar", wrap(async (req, res) => {
+
+	let avalicao_jogo = req.body;
+
+	if (!avalicao_jogo.avaliacao_user) {
+		res.status(400).json("Invalido!");
+		return;
+	};
+	if (!avalicao_jogo.descricao_avaliacao_user) {
+		res.status(400).json("Invalido!");
+		return;
+	}
+
+	await sql.connect(async sql => {
+		// Tudo aqui dentro é executado com a conexão aberta!
+
+		let parametros = [
+			avalicao_jogo.avaliacao_user,
+			avalicao_jogo.descricao_avaliacao_user
+		];
+
+		await sql.query("insert into jogos_avaliados (avaliacao_user, descricao_avaliacao_user) values (?,?)", parametros);
+
+		//...
+	});
+
+	res.json(True)
+
+}));
+
 
 module.exports = router;

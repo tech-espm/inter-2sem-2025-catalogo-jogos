@@ -2,29 +2,29 @@
 
 	<!-- Carrossel principal de Lançamentos -->
 
+	<% const jogos2025 = jogos.filter(j => j.dt_lancamento && new Date(j.dt_lancamento).getFullYear() === 2025); %>
+
+
 	<div id="carousel1" class="carousel slide custom-carousel" data-bs-ride="false" data-bs-wrap="true">
-		<h1 class="subtitulo mt-3">Lançamentos</h1>
+		<h1 class="subtitulo mt-3">Lançamentos 2025</h1>
+		<% if (jogos2025.length > 0) { %>
 		<div class="carousel-indicators">
-			<% for (let contador=0; contador < jogos.length; contador++) { %>
-				<% if (contador===0) { %>
-					<button type="button" data-bs-target="#carousel1" data-bs-slide-to="<%= contador %>" class="active"
-						aria-current="true" aria-label="Slide <%= contador + 1 %>">
-					</button>
-					<% } else { %>
-						<button type="button" data-bs-target="#carousel1" data-bs-slide-to="<%= contador %>"
-							aria-label="Slide <%= contador + 1 %>">
-						</button>
-						<% } %>
-							<% } %>
+			<% for (let i = 0; i < jogos2025.length; i++) { %>
+				<button type="button" data-bs-target="#carousel1" data-bs-slide-to="<%= i %>" class="<%= i === 0 ? 'active' : '' %>"
+					aria-current="true" aria-label="Slide <%= i + 1 %>">
+				</button>
+			<% } %>
+					
 		</div>
 
 		<div class="carousel-inner">
-			<% for (let contador=0; contador < jogos.length; contador++) { %>
-				<div class="carousel-item <%= (contador === 0 ? 'active' : '') %>">
-					<img src="/public/img/CapaJogos/<%= jogos[contador].id %>.jpg" class="d-block w-100" alt="">
+			<% for (let i = 0; i < jogos2025.length; i++) { %>
+				<div class="carousel-item <%= i === 0 ? 'active' : '' %>">
+					<img src="/public/img/CapaJogos/<%= jogos2025[i].id_jogo %>.jpg" class="d-block w-100" alt="">
 				</div>
-				<% } %>
+			<% } %>
 		</div>
+		<% } %>
 
 		<!-- Adicione mais itens de carrossel conforme necessário -->
 
@@ -60,10 +60,10 @@
 	<div id="carousel2-src" class="d-none">
 		<% for (let i=0; i < jogos.length; i++) { %>
 			<div class="col">
-				<a class="card h-100" href="/jogo?id=<%= jogos[i].id %>">
-					<img src="/public/img/CapaJogos/<%= jogos[i].id %>.jpg" class="card-img-top" alt="">
+				<a class="card h-100" href="/jogo?id=<%= jogos[i].id_jogo %>">
+					<img src="/public/img/CapaJogos/<%= jogos[i].id_jogo %>.jpg" class="card-img-top" alt="">
 					<div class="card-body">
-						<p class="card-text">RICARDO</p>
+						<p class="card-text"><%= jogos[i].nm_jogo%></p>
 					</div>
 				</a>
 			</div>
@@ -209,9 +209,5 @@
 		<p class="separar">Escreva e compartilhe suas resenhas. <a class="cadastrar" href="cadastro">Cadastre-se</a> para salvar seus jogos. </p>
 
 	</div>
-
-	
-
-
 
 </div>
