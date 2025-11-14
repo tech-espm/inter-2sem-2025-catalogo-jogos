@@ -452,4 +452,53 @@ body {
 
 /* fim da página login */
 
+/*página wishlist*/
 
+body {
+    background: #2e2a2a;
+    font-family: Arial, sans-serif;
+    color: white;
+    padding: 20px;
+}
+
+.titulo_wish {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.pesquisa_wish {
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 25px;
+}
+
+.card_wish {
+    background: #3a3a3a;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.jogo {
+    width: 120px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.info p {
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+.plataformas img {
+    width: 30px;
+    margin-left: 8px;
+}
+
+/*fim da página wishlist*/
