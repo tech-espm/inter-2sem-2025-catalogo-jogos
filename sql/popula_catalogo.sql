@@ -1,15 +1,15 @@
 
 -- 3. Inserção de Dados (Ordem ajustada para respeitar as chaves estrangeiras)
 
--- 3.1. INSERTS PARA A TABELA PLATAFORMA
-INSERT INTO PLATAFORMA (id_plataforma, nm_plataforma) VALUES
+-- 3.1. INSERTS PARA A TABELA plataforma
+INSERT INTO plataforma (id_plataforma, nm_plataforma) VALUES
 (1, 'PC'),
 (2, 'PlayStation'),
 (3, 'Xbox'),
 (4, 'Nintendo');
 
--- 3.2. INSERTS PARA A TABELA SUBGENERO_JOGO
-INSERT INTO SUBGENERO_JOGO (id_subgenero, nm_subgenero, desc_subgenero) VALUES
+-- 3.2. INSERTS PARA A TABELA subgenero_jogo
+INSERT INTO subgenero_jogo (id_subgenero, nm_subgenero, desc_subgenero) VALUES
 (1, 'Não Aplicável', 'Subgênero genérico ou não aplicável'),
 (2, 'Metroidvania', 'Ação-aventura com mapa não-linear e habilidades'),
 (3, 'Tiro Tático', 'FPS com foco em estratégia e realismo'),
@@ -20,8 +20,8 @@ INSERT INTO SUBGENERO_JOGO (id_subgenero, nm_subgenero, desc_subgenero) VALUES
 (8, 'Construção e Gerenciamento', 'Foco em construir e gerenciar recursos ou cidades'),
 (9, 'Mundo Aberto', 'Aventura com grande liberdade de exploração');
 
--- 3.3. INSERTS PARA A TABELA GENERO_JOGO (Depende de SUBGENERO_JOGO)
-INSERT INTO GENERO_JOGO (id_genero_jogo, nm_genero_jogo, desc_genero_jogo, id_subgenero) VALUES
+-- 3.3. INSERTS PARA A TABELA genero_jogo (Depende de subgenero_jogo)
+INSERT INTO genero_jogo (id_genero_jogo, nm_genero_jogo, desc_genero_jogo, id_subgenero) VALUES
 (1, 'Ação-Aventura', 'Combina elementos de ação e exploração', 2),
 (2, 'Tiro', 'Foco em combate com armas de fogo', 3),
 (3, 'RPG', 'Desenvolvimento de personagem e narrativa', 4),
@@ -36,8 +36,8 @@ INSERT INTO GENERO_JOGO (id_genero_jogo, nm_genero_jogo, desc_genero_jogo, id_su
 (12, 'Sobrevivência', 'Gerenciar recursos para sobreviver em ambiente hostil', 1),
 (13, 'Horror', 'Projetado para causar medo e suspense', 1);
 
--- 3.4. INSERTS PARA A TABELA ESTÚDIO
-INSERT INTO ESTÚDIO (id_estudio, nm_estudio, pais_estudio) VALUES
+-- 3.4. INSERTS PARA A TABELA estúdio
+INSERT INTO estúdio (id_estudio, nm_estudio, pais_estudio) VALUES
 (1, 'Team Cherry', 'Austrália'),
 (2, 'DICE', 'Suécia'),
 (3, 'Supergiant Games', 'EUA'),
@@ -59,8 +59,8 @@ INSERT INTO ESTÚDIO (id_estudio, nm_estudio, pais_estudio) VALUES
 (19, 'InnerSloth', 'EUA'),
 (20, 'SCS Software', 'República Tcheca');
 
--- 3.5. INSERTS PARA A TABELA IDIOMA
-INSERT INTO IDIOMA (id_idioma, nm_idioma) VALUES
+-- 3.5. INSERTS PARA A TABELA idioma
+INSERT INTO idioma (id_idioma, nm_idioma) VALUES
 (1, 'Inglês'),
 (2, 'Espanhol'),
 (3, 'Francês'),
@@ -72,8 +72,8 @@ INSERT INTO IDIOMA (id_idioma, nm_idioma) VALUES
 (9, 'Português (Brasil)'),
 (10, 'Italiano');
 
--- 3.6. INSERTS PARA A TABELA USUARIO
-INSERT INTO USUARIO (id_usuario, nm_usuario, email_usuario) VALUES
+-- 3.6. INSERTS PARA A TABELA usuario
+INSERT INTO usuario (id_usuario, nm_usuario, email_usuario) VALUES
 (1, 'Carlos_Gamer', 'carlos.gamer@email.com'),
 (2, 'Ana_Plays', 'ana.plays@email.com'),
 (3, 'Player_Zero', 'player0@email.com'),
@@ -85,8 +85,8 @@ INSERT INTO USUARIO (id_usuario, nm_usuario, email_usuario) VALUES
 (9, 'Thiago_Shooter', 'thiago.shooter@email.com'),
 (10, 'Sofia_Coop', 'sofia.coop@email.com');
 
--- 3.7. INSERTS PARA A TABELA JOGOS (Depende de GENERO_JOGO, PLATAFORMA, ESTÚDIO, IDIOMA)
-INSERT INTO JOGOS (id_jogo, id_genero_jogo, id_plataforma, id_estudio, id_idioma, nm_jogo, duracao_jogo, classIndicativa_jogo, desc_jogo, dt_lancamento) VALUES
+-- 3.7. INSERTS PARA A TABELA jogos (Depende de genero_jogo, plataforma, estúdio, idioma)
+INSERT INTO jogos (id_jogo, id_genero_jogo, id_plataforma, id_estudio, id_idioma, nm_jogo, duracao_jogo, classIndicativa_jogo, desc_jogo, dt_lancamento) VALUES
 (1, 1, 1, 1, 1, 'Hollow Knight: Silksong', 30, '10+', 'Aguardada sequência do aclamado metroidvania.', '2025-09-04'),
 (2, 2, 1, 2, 1, 'Battlefield 6', 40, '18+', 'Guerra moderna em larga escala com destruição massiva.', '2025-08-09'),
 (3, 3, 1, 3, 9, 'Hades 2', 25, '12+', 'Desafie o titã do tempo com a ajuda dos deuses do Olimpo.', '2025-09-25'),
@@ -108,8 +108,8 @@ INSERT INTO JOGOS (id_jogo, id_genero_jogo, id_plataforma, id_estudio, id_idioma
 (19, 2, 1, 2, 1, 'Battlefield 2042', 50, '16+', 'Guerra total em um futuro próximo com mapas dinâmicos.', '2021-11-12'),
 (20, 5, 1, 14, 9, 'Minecraft', 100, 'Livre', 'Um mundo aberto de blocos para construir, minerar e sobreviver.', '2011-11-18');
 
--- 3.8. INSERTS PARA A TABELA AVALIACOES (Depende de USUARIO e JOGOS)
-INSERT INTO AVALIACOES (id_avaliacao, id_usuario, nota_avaliacao, desc_avaliacao, id_jogo) VALUES
+-- 3.8. INSERTS PARA A TABELA avaliacoes (Depende de usuario e jogos)
+INSERT INTO avaliacoes (id_avaliacao, id_usuario, nota_avaliacao, desc_avaliacao, id_jogo) VALUES
 (1, 1, 4.8, 'Mal posso esperar por este jogo! As expectativas estão altas.', 1),
 (2, 2, 4.4, 'Promete ser o melhor da franquia, com gráficos de nova geração.', 2),
 (3, 3, 4.7, 'Um dos melhores roguelikes já feitos. Jogabilidade viciante.', 3),
