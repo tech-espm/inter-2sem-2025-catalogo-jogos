@@ -115,6 +115,24 @@ router.get("/jogo/:id_jogo", wrap(async (req, res) => {
 	res.render("index/jogo", opcoes);
 }));
 
+router.get("/catalogo", wrap(async (req, res) => {
+	let jogos;
+
+	await sql.connect(async sql => {
+		// Tudo aqui dentro é executado com a conexão aberta!
+
+		jogos = await sql.query("select * from jogos");
+		//...
+	});
+
+	let opcoes = {
+		titulo: "Catalogo",
+		jogos: jogos
+	};
+
+	res.render("index/catalogo", opcoes);
+}));
+
 
 
 // ------------- API -------------------------------//

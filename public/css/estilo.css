@@ -466,3 +466,33 @@ body {
 }
 
 /* FIM CSS PAGINA JOGO */
+
+
+
+
+
+
+
+
+
+/* CSS PAGINA CATALOGO */
+
+.container-fluid-catalogo{
+	margin-top: 25px;
+	padding-bottom: 25px;
+	
+	
+}
+
+.custom-row{
+	max-width: 95%;
+	margin-bottom: 20px;
+}
+
+.card-img-game {
+	height: 300px;
+	object-fit: cover;
+}
+
+
+/* FIM CSS PAGINA CATALOGO */

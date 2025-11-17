@@ -89,7 +89,7 @@ INSERT INTO USUARIO (id_usuario, nm_usuario, email_usuario) VALUES
 INSERT INTO JOGOS (id_jogo, id_genero_jogo, id_plataforma, id_estudio, id_idioma, nm_jogo, duracao_jogo, classIndicativa_jogo, desc_jogo, dt_lancamento) VALUES
 (1, 1, 1, 1, 1, 'Hollow Knight: Silksong', 30, '10+', 'Aguardada sequência do aclamado metroidvania.', '2025-09-04'),
 (2, 2, 1, 2, 1, 'Battlefield 6', 40, '18+', 'Guerra moderna em larga escala com destruição massiva.', '2025-08-09'),
-(3, 3, 1, 3, 9, 'Hades', 25, '12+', 'Desafie o deus dos mortos e fuja do Submundo da mitologia grega.', '2019-12-10'),
+(3, 3, 1, 3, 9, 'Hades 2', 25, '12+', 'Desafie o titã do tempo com a ajuda dos deuses do Olimpo.', '2025-09-25'),
 (4, 4, 1, 4, 9, 'Plants vs. Zombies: Replanted', 20, 'Livre', 'Defenda seu jardim de hordas de zumbis com novas plantas.', '2025-10-23'),
 (5, 5, 1, 5, 9, 'Stardew Valley', 150, 'Livre', 'Herde uma fazenda e construa uma nova vida no campo.', '2016-02-26'),
 (6, 6, 4, 6, 9, 'Mario Kart World', 30, 'Livre', 'Corridas de kart em um mundo aberto com pistas interligadas.', '2025-06-05'),
