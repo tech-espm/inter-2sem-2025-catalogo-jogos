@@ -282,32 +282,32 @@ body {
 
 
 /* Perfil do usuário */
-.perfil{
-	margin: 10px auto ;
+.perfil {
+	margin: 10px auto;
 	color: white;
 	font-family: Arial, Helvetica, sans-serif;
-	
+
 }
 
 .container2 {
-    padding: 40px;
-    background: linear-gradient(to bottom, #252525, #141414);
-    border-radius: 8px;
-    width: 300px;
+	padding: 40px;
+	background: linear-gradient(to bottom, #252525, #141414);
+	border-radius: 8px;
+	width: 300px;
 }
 
-.pinputs{
+.pinputs {
 	margin-top: 12px;
 	margin-bottom: 0px;
 }
 
 .inputado2 {
-    width: 100%;
-    padding: 10px;
-    background: #363636;
-    border: none;
-    border-radius: 5px;
-    color: white;
+	width: 100%;
+	padding: 10px;
+	background: #363636;
+	border: none;
+	border-radius: 5px;
+	color: white;
 }
 
 .bio {
@@ -315,18 +315,18 @@ body {
 }
 
 .botaocad2 {
-    width: 100%;
-    padding: 10px;
-    margin-top: 15px;
-    background: #4b4b4b;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
+	width: 100%;
+	padding: 10px;
+	margin-top: 15px;
+	background: #4b4b4b;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	cursor: pointer;
 }
 
 .botaocad2:hover {
-    background: #5c5c5c;
+	background: #5c5c5c;
 }
 
 
@@ -335,66 +335,66 @@ body {
 /*Página cadastro */
 
 .cadastro {
-    margin: 69px auto 0px auto;
-    font-family: Arial, sans-serif;
-    background: #1b1b1b;
-    color: white;
-    justify-content: center;
+	margin: 69px auto 0px auto;
+	font-family: Arial, sans-serif;
+	background: #1b1b1b;
+	color: white;
+	justify-content: center;
 }
 
 .container {
-    text-align: center;
-    padding: 40px;
-    background: linear-gradient(to bottom, #252525, #141414);
-    border-radius: 8px;
-    width: 300px;
+	text-align: center;
+	padding: 40px;
+	background: linear-gradient(to bottom, #252525, #141414);
+	border-radius: 8px;
+	width: 300px;
 }
 
 .h1cad {
-    margin-bottom: 25px;
+	margin-bottom: 25px;
 }
 
 .inputado {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    background: #363636;
-    border: none;
-    border-radius: 5px;
-    color: white;
+	width: 100%;
+	padding: 10px;
+	margin: 8px 0;
+	background: #363636;
+	border: none;
+	border-radius: 5px;
+	color: white;
 }
 
 .inputado-placeholder {
-    color: #d7d7d7;
+	color: #d7d7d7;
 }
 
 .botaocad {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background: #4b4b4b;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
+	width: 100%;
+	padding: 10px;
+	margin-top: 10px;
+	background: #4b4b4b;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	cursor: pointer;
 }
 
 .botaocad:hover {
-    background: #5c5c5c;
+	background: #5c5c5c;
 }
 
 .login-text {
-    margin-top: 15px;
-    font-size: 14px;
+	margin-top: 15px;
+	font-size: 14px;
 }
 
 .login-text a {
-    color: #8ab4ff;
-    text-decoration: none;
+	color: #8ab4ff;
+	text-decoration: none;
 }
 
 .login-text a:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 /* fim página cadastro*/
@@ -402,52 +402,67 @@ body {
 /*página login*/
 
 .login {
-    margin: 69px auto 0px auto;
-    font-family: Arial, sans-serif;
-    background: #1b1b1b;
-    color: white;
-    justify-content: center;
+	margin: 69px auto 0px auto;
+	font-family: Arial, sans-serif;
+	background: #1b1b1b;
+	color: white;
+	justify-content: center;
 }
 
 .container {
-    text-align: center;
-    padding: 40px;
-    background: linear-gradient(to bottom, #252525, #141414);
-    border-radius: 8px;
-    width: 300px;
+	text-align: center;
+	padding: 40px;
+	background: linear-gradient(to bottom, #252525, #141414);
+	border-radius: 8px;
+	width: 300px;
 }
 
 .h1login {
-    margin-bottom: 25px;
+	margin-bottom: 25px;
 }
 
 .botaologin {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background: #4b4b4b;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
+	width: 100%;
+	padding: 10px;
+	margin-top: 10px;
+	background: #4b4b4b;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	cursor: pointer;
 }
 
 .botaologin:hover {
-    background: #5c5c5c;
+	background: #5c5c5c;
 }
 
 .login-text {
-    margin-top: 15px;
-    font-size: 14px;
+	margin-top: 15px;
+	font-size: 14px;
 }
 
 .login-text a {
-    color: #8ab4ff;
-    text-decoration: none;
+	color: #8ab4ff;
+	text-decoration: none;
 }
 
 .login-text a:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 /* fim da página login */
+
+/* CSS PAGINA JOGO */
+
+#div_capa_jogo{
+	width: 200px;
+	margin: 0px auto
+}
+
+#desc_jogo {
+	padding: 15px;
+	color: #fff;
+
+}
+
+/* FIM CSS PAGINA JOGO */

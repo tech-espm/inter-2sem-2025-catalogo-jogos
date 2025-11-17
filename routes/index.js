@@ -92,36 +92,45 @@ router.get("/cadastro", wrap(async (req, res) => {
 	res.render("index/cadastro", opcoes);
 }));
 
-router.get("/jogo", wrap(async (req, res) => {
+router.get("/jogo/:id_jogo", wrap(async (req, res) => {
+
+	let id_jogo = req.params.id_jogo;
 
 	let jogos;
 
 	await sql.connect(async sql => {
-		// Tudo aqui dentro é executado com a conexão aberta!
 
-		jogos = await sql.query("select * from jogos");
-		//...
+		jogos = await sql.query(
+			"SELECT * FROM jogos WHERE id_jogo = (?)", id_jogo
+		);
+
 	});
+
+
 	let opcoes = {
 		titulo: "",
-		jogos: jogos
+		jogos: jogos[0],
 	};
-
 
 	res.render("index/jogo", opcoes);
 }));
 
 
+
 // ------------- API -------------------------------//
-router.post("/api/cadastrar", wrap(async (req, res) => {
+router.post("/api/cadastrar", (async (req, res) => {
 
-	let avalicao_jogo = req.body;
+	let avaliacao_jogo = req.body;
 
-	if (!avalicao_jogo.avaliacao_user) {
+	if (!avaliacao_jogo.id_jogo) {
 		res.status(400).json("Invalido!");
 		return;
 	};
-	if (!avalicao_jogo.descricao_avaliacao_user) {
+	if (!avaliacao_jogo.avaliacao_user) {
+		res.status(400).json("Invalido!");
+		return;
+	};
+	if (!avaliacao_jogo.descricao_avaliacao_user) {
 		res.status(400).json("Invalido!");
 		return;
 	}
@@ -130,18 +139,18 @@ router.post("/api/cadastrar", wrap(async (req, res) => {
 		// Tudo aqui dentro é executado com a conexão aberta!
 
 		let parametros = [
-			id_user = 1,
-			avalicao_jogo.avaliacao_user,
-			avalicao_jogo.descricao_avaliacao_user,
-			id_jogo = 15
+			1,
+			avaliacao_jogo.avaliacao_user,
+			avaliacao_jogo.descricao_avaliacao_user,
+			avaliacao_jogo.id_jogo
 		];
 
-		await sql.query("insert into avaliacoes (id_user,avaliacao_user, descricao_avaliacao_user, id_jogo) values (?,?,?,?)", parametros);
+		await sql.query("insert into avaliacoes (id_usuario ,nota_avaliacao, desc_avaliacao, id_jogo) values (?,?,?,?)", parametros);
 
 		//...
 	});
 
-	res.json(True)
+	res.json(true)
 
 }));
 

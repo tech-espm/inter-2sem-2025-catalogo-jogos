@@ -1,6 +1,32 @@
-<h1>
-	<%= jogos[1].nm_jogo %>
-</h1>
+<div class="container-fluid">
+	<div class="row" style="padding: 20px 0px;">
+		<div class="col-md-4" id="div_capa_jogo" style="   width: 200px; margin: 0px auto;">
+			<div>
+				<img src="/public/img/CapaJogosVertical/<%= jogos.id_jogo %>.jpg" alt="Capajogo">
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div>
+				<div id="desc_jogo">
+					<h3>
+						<%= jogos.nm_jogo %>
+					</h3>
+					<p>
+						<%=jogos.dt_lancamento %>
+					</p>
+					<div>
+						<p>
+							<%= jogos.desc_jogo %>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
 
 <div class="container-fluid">
 	<div class="row">
@@ -29,53 +55,59 @@
 		</div>
 
 	</div>
-</div>
+</div> 
 
 <script type="text/javascript">
 
-	async function cadastrarAvalicao() {
+	let = jogo_pagina =  <%- JSON.stringify(jogos) %> // Caso teclar "alt + shift + f " apague o espaço entre a % e o -
 
-		let avaliacao_user = document.getElementById("avaliacao_user").value;
-		let descricao_avaliacao_user = document.getElementById("descricao_avaliacao_user").value;
+		async function cadastrarAvalicao() {
 
-		if (!avaliacao_user) {
-			alert("estrelas inválido!");
-			return;
-		}
+			let avaliacao_user = document.getElementById("avaliacao_user").value;
+			let descricao_avaliacao_user = document.getElementById("descricao_avaliacao_user").value;
 
-		if (!descricao_avaliacao_user) {
-			alert("descricao inválido!");
-			return;
-		}
-
-		let avalicao = {
-			avaliacao_user: avaliacao_user,
-			descricao_avaliacao_user: descricao_avaliacao_user
-		};
-
-		try {
-
-			let response = await fetch("/api/cadastrar", {
-				method: "POST",
-				body: JSON.stringify(avalicao),
-				headers: {
-					"content-type": "application/json"
-				}
-			});
-
-			if (!response.ok) {
-				alert("Ocorreu um erro ao cadastrar :(");
+			if (!avaliacao_user) {
+				alert("estrelas inválido!");
 				return;
 			}
 
-			avaliacao_user.value = "";
-			descricao_avaliacao_user.value = "";
+			if (!descricao_avaliacao_user) {
+				alert("descricao inválido!");
+				return;
+			}
 
-			alert("Ocorreu um erro ao cadastrar :(");
+			let avalicao = {
+				id_jogo: jogo_pagina.id_jogo,
+				avaliacao_user: avaliacao_user,
+				descricao_avaliacao_user: descricao_avaliacao_user
+			};
 
-		} catch (ex) {
-			alert("Ocorreu um erro de rede ao criar a pessoa: " + ex.message)
+			try {
+
+				let response = await fetch("/api/cadastrar", {
+					method: "POST",
+					body: JSON.stringify(avalicao),
+					headers: {
+						"content-type": "application/json"
+					}
+				});
+
+				if (!response.ok) {
+					alert("Ocorreu um erro ao cadastrar :(");
+					return;
+				}
+				if (response.ok) {
+					document.getElementById("avaliacao_user").value = "";
+					document.getElementById("descricao_avaliacao_user").value = "";
+					alert("Comentario Cadastrado ;)")
+				}
+
+				avaliacao_user.value = "";
+				descricao_avaliacao_user.value = "";
+
+			} catch (ex) {
+				alert("Ocorreu um erro de rede ao criar a pessoa: " + ex.message)
+			}
 		}
-	}
 
 </script>
