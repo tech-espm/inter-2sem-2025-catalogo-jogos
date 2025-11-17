@@ -97,19 +97,30 @@ router.get("/jogo/:id_jogo", wrap(async (req, res) => {
 	let id_jogo = req.params.id_jogo;
 
 	let jogos;
+	let comentarios;
 
 	await sql.connect(async sql => {
 
 		jogos = await sql.query(
 			"SELECT * FROM jogos WHERE id_jogo = (?)", id_jogo
 		);
+		comentarios = await sql.query(
+			"SELECT * FROM avaliacoes where id_jogo = (?)", id_jogo
+		);
 
 	});
 
-
+	for (let i = 0; i < comentarios.lenth; i++ ) {
+		html += `
+		<hr/>
+		<p> ${comentarios[i].desc_avaliacao}
+		</p>`
+	};
+	
 	let opcoes = {
 		titulo: "",
 		jogos: jogos[0],
+		comentarios: comentarios
 	};
 
 	res.render("index/jogo", opcoes);
