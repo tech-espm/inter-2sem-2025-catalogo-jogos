@@ -481,7 +481,6 @@ body {
 	margin-top: 25px;
 	padding-bottom: 25px;
 	
-	
 }
 
 .custom-row{
@@ -492,7 +491,17 @@ body {
 .card-img-game {
 	height: 300px;
 	object-fit: cover;
+	display: block;
+	transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
 }
 
+.cards-catalogo{
+	display: block;
+}
+
+.cards-catalogo:hover .card-img-game {
+	transform: translateY(-5px) scale(1.03);
+	box-shadow: 0 12px 20px rgba(0, 0, 0, 0.35);
+}
 
 /* FIM CSS PAGINA CATALOGO */
