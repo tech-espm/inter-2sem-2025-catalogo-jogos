@@ -57,7 +57,24 @@ INSERT INTO estúdio (id_estudio, nm_estudio, pais_estudio) VALUES
 (17, 'Valve', 'EUA'),
 (18, 'Psyonix', 'EUA'),
 (19, 'InnerSloth', 'EUA'),
-(20, 'SCS Software', 'República Tcheca');
+(20, 'SCS Software', 'República Tcheca'),
+(21, 'Team PEAK', 'Internacional'),
+(22, 'Semiwork', 'Suécia'),
+(23, 'Ninja Kiwi', 'Nova Zelândia'),
+(24, 'NetEase Games', 'China'),
+(25, 'LocalThunk', 'Canadá'),
+(26, 'Respawn Entertainment', 'EUA'),
+(27, 'Coffee Stain Studios', 'Suécia'),
+(28, 'The Behemoth', 'EUA'),
+(29, 'Sunset Visitor', 'Canadá'),
+(30, 'Atlus', 'Japão'),
+(31, 'Toby Fox', 'EUA'),
+(32, 'Telltale Games', 'EUA'),
+(33, 'Enigma Studios', 'Brasil'),
+(34, 'Polychroma Games', 'Filipinas'),
+(35, 'Quantic Dream', 'França'),
+(36, 'Gearbox Software', 'EUA'),
+(37, 'TT Games', 'Reino Unido');
 
 -- 3.5. INSERTS PARA A TABELA idioma
 INSERT INTO idioma (id_idioma, nm_idioma) VALUES
@@ -106,7 +123,27 @@ INSERT INTO jogos (id_jogo, id_genero_jogo, id_plataforma, id_estudio, id_idioma
 (17, 12, 1, 7, 8, 'Escape from Tarkov', 200, '18+', 'FPS hardcore com elementos de sobrevivência e MMO.', '2017-07-28'),
 (18, 3, 2, 15, 9, 'Dragons Dogma 2', 40, '16+', 'RPG de ação com peões controlados por IA em um mundo de fantasia.', '2024-03-21'),
 (19, 2, 1, 2, 1, 'Battlefield 2042', 50, '16+', 'Guerra total em um futuro próximo com mapas dinâmicos.', '2021-11-12'),
-(20, 5, 1, 14, 9, 'Minecraft', 100, 'Livre', 'Um mundo aberto de blocos para construir, minerar e sobreviver.', '2011-11-18');
+(20, 5, 1, 14, 9, 'Minecraft', 100, 'Livre', 'Um mundo aberto de blocos para construir, minerar e sobreviver.', '2011-11-18'),
+(21, 12, 1, 21, 1, 'Peak', 40, '10+', 'Jogo cooperativo de escalada intensa com elementos de sobrevivência em montanhas perigosas.', '2025-06-16'),
+(22, 13, 1, 22, 1, 'R.E.P.O.', 30, '16+', 'Terror cooperativo em que a equipe coleta itens valiosos e tenta escapar viva das missões.', '2025-02-26'),
+(23, 4, 1, 23, 1, 'Bloons TD 6', 60, 'Livre', 'Tower defense em que macacos usam torres e habilidades malucas para estourar ondas de bloons.', '2018-12-17'),
+(24, 2, 1, 24, 1, 'Marvel Rivals', 80, '12+', 'Hero shooter 6v6 com heróis e vilões da Marvel em arenas dinâmicas e destrutíveis.', '2024-12-06'),
+(25, 3, 1, 25, 1, 'Balatro', 50, '12+', 'Roguelike de baralho em que você monta mãos de pôquer e usa jokers para criar combos absurdos.', '2024-02-20'),
+(26, 9, 1, 26, 1, 'Apex Legends', 120, '16+', 'Battle royale hero shooter em esquadrões que lutam em arenas cheias de mobilidade e habilidades.', '2019-02-04'),
+(27, 5, 1, 27, 1, 'Satisfactory', 120, '12+', 'Simulador de fábrica em primeira pessoa focado em automação e exploração em um planeta alienígena.', '2024-09-10'),
+(28, 1, 1, 28, 1, 'Castle Crashers', 15, '12+', 'Beat them up cooperativo medieval com até quatro cavaleiros e muita pancadaria colorida.', '2008-08-27'),
+(29, 7, 1, 29, 1, '1000xResist', 20, '16+', 'Aventura sci-fi narrativa sobre clones, memória e resistência em um futuro pós-apocalíptico.', '2024-05-09'),
+(30, 3, 1, 30, 1, 'Persona 4 Golden', 80, '16+', 'JRPG escolar em que um grupo de amigos investiga assassinatos misteriosos atravessando para um “mundo da TV”.', '2020-06-13'),
+(31, 3, 1, 31, 1, 'Undertale', 10, '12+', 'RPG indie em que suas escolhas de combate e misericórdia definem a história.', '2015-09-15'),
+(32, 3, 1, 31, 1, 'Deltarune', 15, '12+', 'Nova aventura de Toby Fox com batalhas em grupo e narrativa cheia de mistérios.', '2018-10-31'),
+(33, 7, 1, 32, 1, 'The Walking Dead: The Telltale Definitive Series', 50, '18+', 'Coleção definitiva da série The Walking Dead da Telltale, focada em escolhas difíceis e narrativa emocional.', '2019-09-10'),
+(34, 13, 1, 33, 1, 'Enigma of Fear', 8, '16+', 'Jogo de terror em que você investiga acontecimentos sobrenaturais em cenários claustrofóbicos.', '2024-11-28'),
+(35, 7, 1, 34, 1, 'Until Then', 12, '12+', 'Aventura narrativa escolar sobre amizade, luto e segredos em uma cidade filipina.', '2024-06-25'),
+(36, 11, 1, 28, 1, 'BattleBlock Theater', 12, '10+', 'Plataforma cooperativo cheio de humor absurdo, armadilhas e fases desafiadoras.', '2013-04-03'),
+(37, 7, 1, 35, 1, 'Detroit: Become Human', 15, '18+', 'Thriller interativo em que androides lutam por liberdade e cada escolha muda o rumo da história.', '2018-05-25'),
+(38, 2, 1, 36, 1, 'Borderlands 3', 40, '18+', 'Looter shooter em um universo caótico cheio de armas insanas, humor e cooperativo.', '2019-09-13'),
+(39, 1, 1, 37, 1, 'LEGO Star Wars: The Skywalker Saga', 35, '10+', 'Reviva os nove filmes da saga Skywalker em uma aventura LEGO cheia de humor e exploração.', '2022-04-05'),
+(40, 1, 1, 11, 1, 'Sekiro: Shadows Die Twice', 50, '18+', 'Ação intensa da FromSoftware, focada em combate preciso e exploração no Japão feudal.', '2019-03-22');
 
 -- 3.8. INSERTS PARA A TABELA avaliacoes (Depende de usuario e jogos)
 INSERT INTO avaliacoes (id_avaliacao, id_usuario, nota_avaliacao, desc_avaliacao, id_jogo) VALUES

@@ -489,7 +489,7 @@ body {
 }
 
 .card-img-game {
-	height: 300px;
+	height: 270px;
 	object-fit: cover;
 	display: block;
 	transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
