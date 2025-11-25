@@ -504,4 +504,29 @@ body {
 	box-shadow: 0 12px 20px rgba(0, 0, 0, 0.35);
 }
 
+
+.catalogo-5 .catalogo-item {
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+
+.catalogo-3 .catalogo-item {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+}
+
+
+.catalogo-2 .catalogo-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+
+.catalogo-1 .catalogo-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+
 /* FIM CSS PAGINA CATALOGO */
