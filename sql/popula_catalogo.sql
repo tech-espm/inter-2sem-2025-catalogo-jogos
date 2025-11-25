@@ -74,7 +74,27 @@ INSERT INTO estúdio (id_estudio, nm_estudio, pais_estudio) VALUES
 (34, 'Polychroma Games', 'Filipinas'),
 (35, 'Quantic Dream', 'França'),
 (36, 'Gearbox Software', 'EUA'),
-(37, 'TT Games', 'Reino Unido');
+(37, 'TT Games', 'Reino Unido'),
+(38, 'Maxis', 'EUA'),
+(39, 'Big Blue Bubble', 'Canadá'),
+(40, 'Outpath Studio', 'Espanha'),
+(41, 'Embark Studios', 'Suécia'),
+(42, 'Team Salvato', 'EUA'),
+(43, 'Blue Mammoth Games', 'EUA'),
+(44, 'HAL Laboratory', 'Japão'),
+(45, 'Sonic Team', 'Japão'),
+(46, 'CyberConnect2', 'Japão'),
+(47, 'Ghost Town Games', 'Reino Unido'),
+(48, 'OMOCAT', 'EUA'),
+(49, 'Landfall Games', 'Suécia'),
+(50, 'Gears for Breakfast', 'Dinamarca'),
+(51, 'Tarsier Studios', 'Suécia'),
+(52, 'Extremely OK Games', 'Canadá'),
+(53, 'id Software', 'EUA'),
+(54, 'One More Level', 'Polônia'),
+(55, 'WeirdBeard', 'Países Baixos'),
+(56, 'Studio Wildcard', 'EUA'),
+(57, 'New Blood Interactive', 'EUA');
 
 -- 3.5. INSERTS PARA A TABELA idioma
 INSERT INTO idioma (id_idioma, nm_idioma) VALUES
@@ -143,7 +163,36 @@ INSERT INTO jogos (id_jogo, id_genero_jogo, id_plataforma, id_estudio, id_idioma
 (37, 7, 1, 35, 1, 'Detroit: Become Human', 15, '18+', 'Thriller interativo em que androides lutam por liberdade e cada escolha muda o rumo da história.', '2018-05-25'),
 (38, 2, 1, 36, 1, 'Borderlands 3', 40, '18+', 'Looter shooter em um universo caótico cheio de armas insanas, humor e cooperativo.', '2019-09-13'),
 (39, 1, 1, 37, 1, 'LEGO Star Wars: The Skywalker Saga', 35, '10+', 'Reviva os nove filmes da saga Skywalker em uma aventura LEGO cheia de humor e exploração.', '2022-04-05'),
-(40, 1, 1, 11, 1, 'Sekiro: Shadows Die Twice', 50, '18+', 'Ação intensa da FromSoftware, focada em combate preciso e exploração no Japão feudal.', '2019-03-22');
+(40, 1, 1, 11, 1, 'Sekiro: Shadows Die Twice', 50, '18+', 'Ação intensa da FromSoftware, focada em combate preciso e exploração no Japão feudal.', '2019-03-22'),
+(41, 5, 1, 38, 1, 'The Sims 4', 100, '12+', 'Simulação de vida em que você cria personagens, casas e histórias em um mundo virtual.', '2014-09-02'),
+(42, 5, 1, 39, 1, 'My Singing Monsters', 50, 'Livre', 'Crie ilhas cheias de monstros musicais, combine criaturas e componha melodias únicas.', '2012-09-04'),
+(43, 8, 1, 40, 1, 'Outpath', 20, '10+', 'Jogo de coleta e automação com visual minimalista, focado em relaxar enquanto otimiza recursos.', '2023-10-16'),
+(44, 2, 1, 41, 1, 'THE FINALS', 60, '16+', 'FPS competitivo com arenas destrutíveis em que equipes disputam prêmios em um game show futurista.', '2023-12-07'),
+(45, 10, 4, 6, 1, 'Super Smash Bros. Ultimate', 40, '10+', 'Crossover de luta com dezenas de personagens da Nintendo e convidados em batalhas caóticas.', '2018-12-07'),
+(46, 13, 1, 42, 1, 'Doki Doki Literature Club', 6, '16+', 'Visual novel que começa como um romance escolar e se transforma em um terror psicológico intenso.', '2017-09-22'),
+(47, 10, 1, 43, 1, 'Brawlhalla', 60, '10+', 'Jogo de luta de plataforma free-to-play com diversos personagens e modos competitivos online.', '2017-10-17'),
+(48, 6, 4, 44, 1, 'Kirby Air Riders', 12, 'Livre', 'Jogo de corrida com Kirby e diversos veículos voadores em pistas expansivas, com foco em multiplayer e modos competitivos online.', '2025-11-20'),
+(49, 11, 1, 45, 1, 'Sonic Generations', 12, '10+', 'Aventura de plataforma que celebra várias eras de Sonic, misturando fases clássicas e modernas.', '2011-11-01'),
+(50, 10, 1, 46, 1, 'Naruto Shippuden: Ultimate Ninja Storm 4', 15, '12+', 'Luta cinematográfica que cobre o arco final de Naruto Shippuden com batalhas épicas e cheias de efeitos.', '2016-02-05'),
+(51, 7, 1, 9, 1, 'Grand Theft Auto V', 50, '18+', 'Mundo aberto criminal em Los Santos, com três protagonistas e inúmeras atividades.', '2015-04-14'),
+(52, 6, 1, 18, 1, 'Rocket League', 100, '10+', 'Partidas frenéticas de futebol com carros turbo em arenas futuristas.', '2015-07-07'),
+(53, 5, 1, 47, 1, 'Overcooked 2', 15, '10+', 'Jogo cooperativo caótico de cozinha em que a coordenação é tudo.', '2018-08-07'),
+(54, 3, 1, 48, 1, 'OMORI', 25, '16+', 'RPG psicológico com visual fofo e temas pesados, alternando entre sonho e realidade.', '2020-12-25'),
+(55, 10, 1, 49, 1, 'Stick Fight: The Game', 10, '10+', 'Luta 2D com bonecos de palito em fases cheias de armas e armadilhas físicas.', '2017-09-28'),
+(56, 11, 1, 50, 1, 'A Hat in Time', 20, '10+', 'Plataforma 3D inspirado nos clássicos, com uma garotinha viajante do espaço.', '2017-10-05'),
+(57, 13, 1, 51, 1, 'Little Nightmares', 6, '16+', 'Aventura de terror em que você guia Six por cenários opressores e perturbadores.', '2017-04-28'),
+(58, 13, 1, 51, 1, 'Little Nightmares II', 8, '16+', 'Nova história de terror sombrio com Mono e Six em um mundo distorcido.', '2021-02-11'),
+(59, 11, 1, 52, 1, 'Celeste', 12, '10+', 'Plataforma desafiador sobre escalar uma montanha e enfrentar seus próprios limites.', '2018-01-25'),
+(60, 2, 1, 53, 1, 'DOOM Eternal', 18, '18+', 'FPS frenético em que o Doom Slayer enfrenta hordas demoníacas em alta velocidade.', '2020-03-20'),
+(61, 1, 1, 54, 1, 'Ghostrunner', 10, '18+', 'Ação em primeira pessoa com katana, parkour e um único golpe letal.', '2020-10-27'),
+(62, 8, 1, 55, 1, 'Tricky Towers', 20, '10+', 'Jogo de empilhar blocos com física caótica e feitiços para atrapalhar os adversários.', '2016-08-02'),
+(63, 1, 1, 37, 1, 'LEGO Batman 3: Beyond Gotham', 15, '10+', 'Aventura LEGO com Batman e heróis da DC viajando pelo espaço para deter Brainiac.', '2014-11-11'),
+(64, 12, 1, 56, 1, 'ARK: Survival Evolved', 200, '16+', 'Sobreviva em uma ilha cheia de dinossauros, construa bases e domestique criaturas.', '2017-08-29'),
+(65, 2, 1, 57, 1, 'ULTRAKILL', 15, '18+', 'FPS ultrarrápido ao estilo retrô, focado em movimento, combos e carnificina estilosa.', '2020-09-03');
+
+
+
+
 
 -- 3.8. INSERTS PARA A TABELA avaliacoes (Depende de usuario e jogos)
 INSERT INTO avaliacoes (id_avaliacao, id_usuario, nota_avaliacao, desc_avaliacao, id_jogo) VALUES
