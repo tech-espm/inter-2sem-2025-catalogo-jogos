@@ -43,7 +43,6 @@ router.get("/sobre", wrap(async (req, res) => {
 
 router.get("/wishlist", wrap(async (req, res) => {
 
-
 	let usuario = {
 		id_user: 1,
 		nome_usuario: "Rafel",
