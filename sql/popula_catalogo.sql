@@ -94,7 +94,17 @@ INSERT INTO estúdio (id_estudio, nm_estudio, pais_estudio) VALUES
 (54, 'One More Level', 'Polônia'),
 (55, 'WeirdBeard', 'Países Baixos'),
 (56, 'Studio Wildcard', 'EUA'),
-(57, 'New Blood Interactive', 'EUA');
+(57, 'New Blood Interactive', 'EUA'),
+(58, 'StudioMDHR', 'Canadá'),
+(59, 'Frozen District', 'Polônia'),
+(60, 'Bay 12 Games', 'EUA'),          
+(61, 'P-Studio', 'Japão'),
+(62, 'Game Freak', 'Japão'),
+(63, 'Epic Games', 'EUA'),
+(64, 'Motion Twin', 'França'),
+(65, 'The Game Kitchen', 'Espanha'),
+(66, 'Nintendo EPD', 'Japão');
+
 
 -- 3.5. INSERTS PARA A TABELA idioma
 INSERT INTO idioma (id_idioma, nm_idioma) VALUES
@@ -188,7 +198,22 @@ INSERT INTO jogos (id_jogo, id_genero_jogo, id_plataforma, id_estudio, id_idioma
 (62, 8, 1, 55, 1, 'Tricky Towers', 20, '10+', 'Jogo de empilhar blocos com física caótica e feitiços para atrapalhar os adversários.', '2016-08-02'),
 (63, 1, 1, 37, 1, 'LEGO Batman 3: Beyond Gotham', 15, '10+', 'Aventura LEGO com Batman e heróis da DC viajando pelo espaço para deter Brainiac.', '2014-11-11'),
 (64, 12, 1, 56, 1, 'ARK: Survival Evolved', 200, '16+', 'Sobreviva em uma ilha cheia de dinossauros, construa bases e domestique criaturas.', '2017-08-29'),
-(65, 2, 1, 57, 1, 'ULTRAKILL', 15, '18+', 'FPS ultrarrápido ao estilo retrô, focado em movimento, combos e carnificina estilosa.', '2020-09-03');
+(65, 2, 1, 57, 1, 'ULTRAKILL', 15, '18+', 'FPS ultrarrápido ao estilo retrô, focado em movimento, combos e carnificina estilosa.', '2020-09-03'),
+(66, 11, 1, 58, 1, 'Cuphead', 12, '10+', 'Plataforma run-and-gun com visual de desenho dos anos 30 e chefes desafiadores.', '2017-09-29'),
+(67, 5, 1, 59, 1, 'House Flipper', 30, 'Livre', 'Simulador de reforma de casas onde você limpa, decora e vende propriedades.', '2018-05-17'),
+(68, 5, 1, 60, 1, 'Dwarf Fortress', 200, '10+', 'Simulador de fortaleza extremamente profundo, famoso por suas histórias emergentes.', '2006-08-08'),
+(69, 13, 1, 15, 1, 'Resident Evil 7: Biohazard', 10, '18+', 'Terror em primeira pessoa na mansão dos Bakers, com atmosfera opressiva.', '2017-01-24'),
+(70, 13, 1, 15, 1, 'Resident Evil Village', 12, '18+', 'Continuação direta de RE7 com exploração em vilarejos e criaturas bizarras.', '2021-05-07'),
+(71, 3, 1, 61, 1, 'Persona 5 Royal', 100, '16+', 'JRPG moderno sobre vida escolar, amizades e ladrões sobrenaturais de coração.', '2022-10-21'),
+(72, 7, 4, 62, 1, 'Pokémon Legends ZA', 25, 'Livre', 'RPG de ação em mundo aberto na cidade de Lumiose com exploração e captura dinâmica.', '2025-10-16'),
+(73, 2, 1, 17, 1, 'Left 4 Dead 2', 10, '18+', 'Tiro cooperativo contra hordas de infectados com foco em ação frenética.', '2009-11-17'),
+(74, 9, 1, 63, 1, 'Fortnite', 100, '12+', 'Battle royale extremamente popular com construção, eventos e temporadas constantes.', '2017-07-25'),
+(75, 3, 1, 12, 1, 'Cyberpunk 2077', 60, '18+', 'RPG futurista em Night City, com narrativa densa e elementos de ação.', '2020-12-10'),
+(76, 1, 1, 64, 1, 'Dead Cells', 20, '12+', 'Ação roguelike com combate rápido e progressão repleta de desafios.', '2018-08-07'),
+(77, 1, 1, 65, 1, 'Blasphemous', 15, '16+', 'Metroidvania sombrio inspirado em arte religiosa e folclore espanhol.', '2019-09-10'),
+(78, 11, 4, 66, 1, 'Super Mario Bros. Wonder', 10, 'Livre', 'Nova aventura 2D de Mario com mecânicas transformadoras e mundos coloridos.', '2023-10-20'),
+(79, 7, 1, 35, 1, 'Heavy Rain', 10, '16+', 'Suspense interativo baseado em decisões que mudam totalmente a história.', '2020-06-18'),
+(80, 1, 1, 46, 1, 'Dragon Ball Z: Kakarot', 30, '12+', 'Ação-aventura que reconta toda a história de Dragon Ball Z com lutas e exploração.', '2020-01-17');
 
 
 
