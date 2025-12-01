@@ -67,8 +67,8 @@
 <script type="text/javascript">
 
 	// Transformar a os objetos globais em variaveis que o Javascfipt pode utilizar
-	let = comentarios_pagina =  <%- JSON.stringify(comentarios) %>;// Caso teclar "alt + shift + f " apague o espaço entre a % e o -
-	let = jogo_pagina =  <%- JSON.stringify(jogos) %>; // Caso teclar "alt + shift + f " apague o espaço entre a % e o -
+	let comentarios_pagina =  <%- JSON.stringify(comentarios) %>;// Caso teclar "alt + shift + f " apague o espaço entre a % e o -
+	let jogo_pagina =  <%- JSON.stringify(jogos) %>; // Caso teclar "alt + shift + f " apague o espaço entre a % e o -
 
 	let html = "";
 
@@ -152,18 +152,17 @@
 
 			if (!response.ok) {
 				alert("Ocorreu um erro ao cadastrar :(");
-				return;
-			}
-			if (response.ok) {
+			} else {
 				// Reset star rating
 				$('#avaliacao_user').barrating('set', 0);
 				document.getElementById("descricao_avaliacao_user").value = "";
-				alert("Comentario Cadastrado ;)")
+				window.location.reload(); 
 			}
 
 		} catch (ex) {
 			alert("Ocorreu um erro de rede ao criar a pessoa: " + ex.message)
 		}
+		 
 	}
 
 	// Deletar Comentario
@@ -186,17 +185,14 @@
 
 			if (!response.ok) {
 				alert("Ocorreu um erro ao deletar :(");
-				return;
+			} else {
+				window.location.reload(); 
 			}
-			
-			alert("Comentario Deletado :()");
-
-
-
+	
 		} catch (ex) {
 			alert("Ocorreu um erro de rede ao deletar a pessoa: " + ex.message)
 		}
-
+		
 	}
 
 </script>
