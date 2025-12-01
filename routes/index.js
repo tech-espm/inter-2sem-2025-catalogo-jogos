@@ -182,5 +182,14 @@ router.post("/api/cadastrar", (async (req, res) => {
 
 }));
 
+router.post("/api/deletar",(async (req, res) => {
+
+	const { id_avaliacao } = req.body;
+
+	await sql.connect(async sql => {
+
+		await sql.query("delete from avaliacoes where id_avaliacao = (?);", [id_avaliacao]);
+	});
+}));
 
 module.exports = router;

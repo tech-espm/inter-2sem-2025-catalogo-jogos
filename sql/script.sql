@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `catalogojogos`.`jogos` (
   `duracao_jogo` INT NOT NULL,
   `classIndicativa_jogo` VARCHAR(45) NOT NULL, -- Aumentado para 45 para consistência
   `desc_jogo` VARCHAR(300) NOT NULL,
-  `dt_lancamento` DATE NULL,
+  `dt_lancamento` DATETIME NULL,
   PRIMARY KEY (`id_jogo`),
   INDEX `id_genero_jogo_idx` (`id_genero_jogo` ASC),
   INDEX `id_plataforma_idx` (`id_plataforma` ASC),
