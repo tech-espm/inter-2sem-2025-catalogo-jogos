@@ -230,7 +230,7 @@ INSERT INTO jogos (id_jogo, id_genero_jogo, id_plataforma, id_estudio, id_idioma
 (77, 1, 1, 65, 1, 'Blasphemous', 15, '16+', 'Metroidvania sombrio inspirado em arte religiosa e folclore espanhol.', '2019-09-10'),
 (78, 11, 4, 66, 1, 'Super Mario Bros. Wonder', 10, 'Livre', 'Nova aventura 2D de Mario com mecânicas transformadoras e mundos coloridos.', '2023-10-20'),
 (79, 7, 1, 35, 1, 'Heavy Rain', 10, '16+', 'Suspense interativo baseado em decisões que mudam totalmente a história.', '2020-06-18'),
-(80, 1, 1, 46, 1, 'Dragon Ball Z: Kakarot', 30, '12+', 'Ação-aventura que reconta toda a história de Dragon Ball Z com lutas e exploração.', '2020-01-17');
+(80, 1, 1, 46, 1, 'Dragon Ball Z: Kakarot', 30, '12+', 'Ação-aventura que reconta toda a história de Dragon Ball Z com lutas e exploração.', '2020-01-17'),
 (81, 1, 1, 67, 1, 'Clair Obscure: Expedition 33', 20, '14+', 'RPG narrativo inspirado em contos franceses com combate em tempo real.', '2025-04-24'),
 (82, 2, 1, 68, 1, 'DOOM: The Dark Ages', 18, '18+', 'Nova prequela medieval do Slayer com armas brutais e combates frenéticos.', '2025-05-14'),
 (83, 7, 1, 69, 1, 'Despelote', 5, 'Livre', 'Aventura narrativa sobre futebol e infância no Equador.', '2025-05-01'),
