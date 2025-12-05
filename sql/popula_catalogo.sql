@@ -103,7 +103,24 @@ INSERT INTO estúdio (id_estudio, nm_estudio, pais_estudio) VALUES
 (63, 'Epic Games', 'EUA'),
 (64, 'Motion Twin', 'França'),
 (65, 'The Game Kitchen', 'Espanha'),
-(66, 'Nintendo EPD', 'Japão');
+(66, 'Nintendo EPD', 'Japão'),
+(67, 'Sandfall Interactive', 'França'),
+(68, 'Bethesda Game Studios', 'EUA'),
+(69, 'Sailforth Studio', 'Equador'),
+(70, 'Electronic Arts', 'EUA'),
+(71, 'Evil Empire', 'EUA'),
+(72, 'Activision', 'EUA'),
+(73, 'Re-Logic', 'EUA'),
+(74, 'Mobius Digital', 'EUA'),
+(75, 'Videocult', 'EUA'),
+(76, 'Daniel Mullins Games', 'Canadá'),
+(77, 'D-Cell Games', 'EUA'),
+(78, 'Split Fiction Team', 'Internacional'),
+(79, 'Kojima Productions', 'Japão'),
+(80, 'Deep Field Games', 'EUA'),
+(81, 'Pugstorm', 'Suécia'),
+(82, 'Kitsune Games', 'EUA'),
+(83, 'Rockstar Vancouver', 'Canadá'); 
 
 
 -- 3.5. INSERTS PARA A TABELA idioma
@@ -213,8 +230,27 @@ INSERT INTO jogos (id_jogo, id_genero_jogo, id_plataforma, id_estudio, id_idioma
 (77, 1, 1, 65, 1, 'Blasphemous', 15, '16+', 'Metroidvania sombrio inspirado em arte religiosa e folclore espanhol.', '2019-09-10'),
 (78, 11, 4, 66, 1, 'Super Mario Bros. Wonder', 10, 'Livre', 'Nova aventura 2D de Mario com mecânicas transformadoras e mundos coloridos.', '2023-10-20'),
 (79, 7, 1, 35, 1, 'Heavy Rain', 10, '16+', 'Suspense interativo baseado em decisões que mudam totalmente a história.', '2020-06-18'),
-(80, 1, 1, 46, 1, 'Dragon Ball Z: Kakarot', 30, '12+', 'Ação-aventura que reconta toda a história de Dragon Ball Z com lutas e exploração.', '2020-01-17');
-
+(80, 1, 1, 46, 1, 'Dragon Ball Z: Kakarot', 30, '12+', 'Ação-aventura que reconta toda a história de Dragon Ball Z com lutas e exploração.', '2020-01-17'),
+(81, 1, 1, 67, 1, 'Clair Obscure: Expedition 33', 20, '14+', 'RPG narrativo inspirado em contos franceses com combate em tempo real.', '2025-04-24'),
+(82, 2, 1, 68, 1, 'DOOM: The Dark Ages', 18, '18+', 'Nova prequela medieval do Slayer com armas brutais e combates frenéticos.', '2025-05-14'),
+(83, 7, 1, 69, 1, 'Despelote', 5, 'Livre', 'Aventura narrativa sobre futebol e infância no Equador.', '2025-05-01'),
+(84, 9, 1, 41, 1, 'ARC Raiders', 40, '14+', 'Shooter cooperativo contra máquinas gigantes em um mundo sci-fi.', '2025-10-30'),
+(85, 6, 1, 70, 1, 'EA Sports FC 26', 40, 'Livre', 'O maior simulador de futebol retorna com melhorias gráficas e jogabilidade renovada.', '2025-09-25'),
+(86, 1, 4, 66, 1, 'Donkey Kong Bananza', 12, 'Livre', 'Nova aventura 3D de Donkey Kong explorando ilhas tropicais.', '2025-07-17'),
+(87, 7, 1, 81, 1, 'Dispatch', 4, '14+', 'Thriller narrativo em uma noite de emergências tensas e decisões cruciais.', '2025-10-22'),
+(88, 1, 1, 45, 1, 'Sonic Frontiers', 25, '10+', 'Sonic em mundo aberto, explorando ilhas misteriosas e descobrindo segredos antigos.', '2022-11-08'),
+(89, 2, 1, 72, 1, 'Call of Duty: Black Ops II', 8, '18+', 'FPS clássico com campanha futurista e multiplayer icônico.', '2012-11-12'),
+(90, 8, 1, 73, 1, 'Terraria', 100, '10+', 'Aventura sandbox 2D com exploração, construção e combate.', '2011-05-16'),
+(91, 7, 1, 74, 1, 'Outer Wilds', 20, '10+', 'Exploração espacial em um sistema solar preso em looping temporal.', '2019-05-28'),
+(92, 12, 1, 75, 1, 'Rain World', 40, '12+', 'Jogo de sobrevivência brutal em um ecossistema hostil e imprevisível.', '2017-03-28'),
+(93, 8, 1, 76, 1, 'Inscryption', 12, '14+', 'Deckbuilding psicológico que mistura roguelike, escape room e narrativa perturbadora.', '2021-10-19'),
+(94, 11, 1, 77, 1, 'UNBEATABLE', 6, 'Livre', 'Jogo rítmico estiloso com narrativa emocional sobre música e identidade.', '2025-12-09'),
+(95, 7, 1, 78, 1, 'Split Fiction', 10, '12+', 'Aventura narrativa dividida em duas perspectivas, revelando segredos paralelos.', '2025-03-06'),
+(96, 1, 1, 79, 1, 'Death Stranding 2: On the Beach', 40, '16+', 'A nova jornada de Sam Bridges em um mundo pós-apocalíptico surreal.', '2025-06-26'),
+(97, 12, 1, 80, 1, 'Abiotic Factor', 60, '14+', 'Sobrevivência cooperativa em uma instalação científica invadida por criaturas.', '2025-07-22'),
+(98, 12, 1, 81, 1, 'Core Keeper', 50, 'Livre', 'Aventura de mineração e sobrevivência com elementos de RPG.', '2024-08-27'),
+(99, 13, 1, 82, 1, 'Look Outside', 6, '14+', 'Horror psicológico sobre observar o mundo externo e temer o desconhecido.', '2025-03-21'),
+(100, 1, 1, 83, 1, 'Bully', 15, '14+', 'Ação-aventura escolar com humor ácido e exploração no campus de Bullworth Academy.', '2006-10-17');
 
 
 
