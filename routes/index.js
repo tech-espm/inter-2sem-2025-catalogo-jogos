@@ -43,6 +43,7 @@ router.get("/sobre", wrap(async (req, res) => {
 
 router.get("/wishlist", wrap(async (req, res) => {
 
+<<<<<<< Updated upstream
 	let usuario = {
 		id_user: 1,
 		nome_usuario: "Rafel",
@@ -62,13 +63,16 @@ router.get("/wishlist", wrap(async (req, res) => {
 	};
 
 	let produtosVindosDoBanco = usuario;
+=======
+
+
+>>>>>>> Stashed changes
 
 	let opcoes = {
 		titulo: "Listagem de Produtos",
-		produtos: produtosVindosDoBanco
 	};
 
-	res.render("index/wishlist", usuario);
+	res.render("index/wishlist", opcoes);
 }));
 
 router.get("/login", wrap(async (req, res) => {
@@ -182,5 +186,14 @@ router.post("/api/cadastrar", (async (req, res) => {
 
 }));
 
+router.post("/api/deletar",(async (req, res) => {
+
+	const { id_avaliacao } = req.body;
+
+	await sql.connect(async sql => {
+
+		await sql.query("delete from avaliacoes where id_avaliacao = (?);", [id_avaliacao]);
+	});
+}));
 
 module.exports = router;

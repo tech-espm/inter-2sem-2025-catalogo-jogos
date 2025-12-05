@@ -444,6 +444,7 @@ body {
 
 /* fim da página login */
 
+<<<<<<< Updated upstream
 /* CSS PAGINA JOGO */
 
 #div_capa_jogo{
@@ -514,3 +515,231 @@ body {
 
 /* FIM CSS PAGINA CATALOGO */
 
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*página wishlist*/
+
+.titulo_wish {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.pesquisa_wish {
+    max-width: 350px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #4b4b4b;
+    border: none;
+    color: white;
+    margin-left: 20px;
+}
+
+.pesquisa_wish::placeholder {
+    color: #dddddd;
+}
+
+.card_wish {
+    background: linear-gradient(to bottom, #2a2a2a, #181818);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 0 auto 25px auto;
+    max-width: 900px;
+}
+
+.jogo {
+    width: 100%;
+    max-width: 240px;
+    border-radius: 10px;
+}
+
+.info_wish h3 {
+    color: white;
+    margin-bottom: 8px;
+}
+
+.info_wish p {
+    color: #dddddd;
+    margin-bottom: 4px;
+}
+
+.plataformas_wish img {
+    width: 32px;
+    margin-left: 5px;
+}
+
+a {
+    color: #8ab4ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/*fim da página wishlist*/
+>>>>>>> Stashed changes
