@@ -2,45 +2,54 @@
 
 	<!-- Carrossel principal de Lançamentos -->
 
-	<% const jogos2025=jogos.filter(j=> j.dt_lancamento && new Date(j.dt_lancamento).getFullYear() === 2025 && new Date(j.dt_lancamento).getMonth() >= 7); %>
-
+	<% 
+	const jogos2025 = jogos 
+		.filter(j=> j.dt_lancamento)
+		.filter(j => {
+			const d = new Date(j.dt_lancamento);
+			return d.getFullYear() === 2025 && d.getMonth() >= 7;
+		});
+	%>
 
 		<div id="carousel1" class="carousel slide custom-carousel" data-bs-ride="false" data-bs-wrap="true">
 			<h1 class="subtitulo mt-3">Lançamentos Populares</h1>
 			<% if (jogos2025.length> 0) { %>
+				
+				<!-- Indicadores -->
 				<div class="carousel-indicators">
 					<% for (let i=0; i < jogos2025.length; i++) { %>
-						<button type="button" data-bs-target="#carousel1" data-bs-slide-to="<%= i %>"
-							class="<%= i === 0 ? 'active' : '' %>" aria-current="true" aria-label="Slide <%= i + 1 %>">
+						<button 
+							type="button" 
+							data-bs-target="#carousel1" 
+							data-bs-slide-to="<%= i %>"
+							class="<%= i === 0 ? 'active' : '' %>"  
+							aria-label="Slide <%= i + 1 %>">
 						</button>
-						<% } %>
-
+					<% } %>
 				</div>
 
+				<!-- Imagens -->
 				<div class="carousel-inner">
 					<% for (let i=0; i < jogos2025.length; i++) { %>
 						<div class="carousel-item <%= i === 0 ? 'active' : '' %>">
 							<a class="link-carousel" href="/jogo/<%= jogos2025[i].id_jogo %>">
-								<img src="/public/img/CapaJogos/<%= jogos2025[i].id_jogo %>.jpg" class="d-block w-100"
-									alt="">
+								<img src="/public/img/CapaJogos/<%= jogos2025[i].id_jogo %>.jpg" 
+									class="d-block w-100" alt="<%= jogos2025[i].nm_jogo %>">
 							</a>
 						</div>
-						<% } %>
+					<% } %>
 				</div>
-				<% } %>
-
-					<!-- Adicione mais itens de carrossel conforme necessário -->
-
-					<button class="carousel-control-prev" type="button" data-bs-target="#carousel1"
-						data-bs-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Anterior</span>
-					</button>
-					<button class="carousel-control-next" type="button" data-bs-target="#carousel1"
-						data-bs-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Próximo</span>
-					</button>
+			<% } %>
+			
+			<!-- Controles -->
+			<button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Anterior</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Próximo</span>
+			</button>
 		</div>
 
 
