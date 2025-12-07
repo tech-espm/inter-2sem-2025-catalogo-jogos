@@ -6,7 +6,7 @@ html,
 body {
 	/* Para fazer o rodapé ficar sempre na parte inferior da página ;) */
 	min-height: 100vh;
-	background-color: rgb(13, 13, 13);
+	background-color: rgb(17, 17, 17);
 }
 
 .limitador {
@@ -71,12 +71,16 @@ body {
 	cursor: pointer;
 }
 
+/* fim página barra*/
+
 /* Home */
 
 .container-fluid-home {
 	margin-top: 60px;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+/* fim página Home*/
 
 
 
@@ -89,30 +93,60 @@ body {
 
 .custom-carousel {
 	overflow: visible;
-	max-width: 70%;
+	max-width: 50%;
 	margin-inline: auto;
 }
 
-.custom-carousel .carousel-item {
-	aspect-ratio: 16/9;
+.link-carousel {
+	position: relative;
+    display: block;
+    overflow: hidden;
 }
 
-.custom-carousel .carousel-item img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+.link-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
 }
 
-.custom-carousel .carousel-inner {
-	overflow: hidden;
+.link-carousel:hover img {
+    transform: scale(1.02);
+    filter: brightness(75%);
 }
 
 .custom-carousel .carousel-control-prev,
 .custom-carousel .carousel-control-next {
 	top: 50%;
-	transform: translateY(-50%);
-	width: 2.75rem;
 	opacity: 1;
+	width: 50px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.25);   
+    border-radius: 8px;                
+    backdrop-filter: blur(3px);        
+    transition: all 0.3s ease;
+	transform: translateY(-50%);  
+}
+
+
+.custom-carousel .carousel-control-prev-icon,
+.custom-carousel .carousel-control-next-icon {
+    filter: brightness(1.2);           
+    transition: filter 0.3s ease;
+}
+
+
+.custom-carousel .carousel-control-prev:hover,
+.custom-carousel .carousel-control-next:hover {
+    background: rgba(255, 255, 255, 0.18); 
+               
+}
+
+
+.custom-carousel .carousel-control-prev:hover .carousel-control-prev-icon,
+.custom-carousel .carousel-control-next:hover .carousel-control-next-icon {
+    filter: brightness(3);
+	transform: scale(1.08);
 }
 
 .custom-carousel .carousel-control-prev {
@@ -126,6 +160,8 @@ body {
 .custom-carousel .carousel-indicators {
 	bottom: -2.5rem;
 }
+
+/* fim página Carousel lançamentos*/
 
 /* Carousel populares */
 
@@ -173,7 +209,7 @@ body {
 	bottom: -2.5rem;
 }
 
-/* MOBILE */
+/* mobile carousel populares */
 @media (max-width: 575.98px) {
 	.custom-carousel2 {
 		width: clamp(80px, 90vw, 260px);
@@ -182,6 +218,8 @@ body {
 	}
 
 }
+
+/* Fim de Carousel populares */
 
 
 /* Aviso de login e Conta */
@@ -224,6 +262,8 @@ body {
 .cadastrar:hover {
 	color: rgb(62, 88, 237);
 }
+
+/* Fim do aviso de login */
 
 /* CSS da pagina Sobre Nós */
 
@@ -323,6 +363,8 @@ body {
 .botaocad2:hover {
 	background: #5c5c5c;
 }
+
+/* Fim do Perfil do usuário */
 
 /*Página cadastro */
 
