@@ -82,6 +82,55 @@ body {
 
 /* fim página Home*/
 
+/* Carousel COMUNS */
+
+.carousel-comum {
+    position: relative;
+    overflow: visible;
+}
+
+.carousel-comum .carousel-inner {
+    overflow: hidden;
+}
+
+.carousel-comum .carousel-control-prev,
+.carousel-comum .carousel-control-next {
+    top: 50%;
+	transform: translateY(-50%);
+	width: 50px;
+	height: 80px;
+	opacity: 1;
+	background: rgba(0, 0, 0, 0.25); 
+	border-radius: 8px;
+	backdrop-filter: blur(3px);
+	transition: all 0.3s ease;
+}
+
+.carousel-comum .carousel-control-prev-icon,
+.carousel-comum .carousel-control-next-icon {
+	filter: brightness(1.2);
+	transition: filter 0.3s ease;
+}
+
+.carousel-comum .carousel-control-prev:hover,
+.carousel-comum .carousel-control-next:hover {
+	background: rgba(255, 255, 255, 0.18);
+}
+
+.carousel-comum .carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-comum .carousel-control-next:hover .carousel-control-next-icon {
+	filter: brightness(3);
+	transform: scale(1.08);
+}
+
+.carousel-comum .carousel-control-prev { left: -3.5rem; }
+.carousel-comum .carousel-control-next { right: -3.5rem; }
+
+.carousel-comum .carousel-indicators {
+    bottom: -2.5rem;
+}
+
+/* Fim do Carousel COMUNS */
 
 
 /* Carousel lançamentos */
@@ -92,7 +141,6 @@ body {
 }
 
 .custom-carousel {
-	overflow: visible;
 	max-width: 50%;
 	margin-inline: auto;
 }
@@ -115,111 +163,31 @@ body {
     filter: brightness(75%);
 }
 
-.custom-carousel .carousel-control-prev,
-.custom-carousel .carousel-control-next {
-	top: 50%;
-	opacity: 1;
-	width: 50px;
-    height: 80px;
-    background: rgba(0, 0, 0, 0.25);   
-    border-radius: 8px;                
-    backdrop-filter: blur(3px);        
-    transition: all 0.3s ease;
-	transform: translateY(-50%);  
-}
-
-
-.custom-carousel .carousel-control-prev-icon,
-.custom-carousel .carousel-control-next-icon {
-    filter: brightness(1.2);           
-    transition: filter 0.3s ease;
-}
-
-
-.custom-carousel .carousel-control-prev:hover,
-.custom-carousel .carousel-control-next:hover {
-    background: rgba(255, 255, 255, 0.18); 
-               
-}
-
-
-.custom-carousel .carousel-control-prev:hover .carousel-control-prev-icon,
-.custom-carousel .carousel-control-next:hover .carousel-control-next-icon {
-    filter: brightness(3);
-	transform: scale(1.08);
-}
-
-.custom-carousel .carousel-control-prev {
-	left: -3.5rem;
-}
-
-.custom-carousel .carousel-control-next {
-	right: -3.5rem;
-}
-
-.custom-carousel .carousel-indicators {
-	bottom: -2.5rem;
-}
-
 /* fim página Carousel lançamentos*/
 
-/* Carousel populares */
+/* Carousel jogos de ação */
 
 .custom-carousel2 {
 	max-width: 85%;
 	margin: 100px auto 0;
-	position: relative;
-	overflow: visible;
 }
 
 .custom-carousel2 .card-img-top {
 	width: 100%;
 	aspect-ratio: 16/9;
 	object-fit: cover;
-	object-position: center;
+	
 }
 
-.custom-carousel2 .carousel-inner {
-	overflow: hidden;
-}
-
-.custom-carousel2 .fixo {
-	flex-wrap: nowrap;
-}
-
-
-.custom-carousel2 .carousel-control-prev,
-.custom-carousel2 .carousel-control-next {
-	top: 50%;
-	transform: translateY(-50%);
-	width: 2.75rem;
-	opacity: 1;
-}
-
-.custom-carousel2 .carousel-control-prev {
-	left: -3.5rem;
-}
-
-.custom-carousel2 .carousel-control-next {
-	right: -3.5rem;
-}
-
-
-.custom-carousel2 .carousel-indicators {
-	bottom: -2.5rem;
-}
-
-/* mobile carousel populares */
+/* mobile carousel ação */
 @media (max-width: 575.98px) {
 	.custom-carousel2 {
 		width: clamp(80px, 90vw, 260px);
-		margin-inline: auto;
-		position: relative;
 	}
 
 }
 
-/* Fim de Carousel populares */
+/* Fim de Carousel de ação */
 
 
 /* Aviso de login e Conta */
