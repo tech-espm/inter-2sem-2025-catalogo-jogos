@@ -179,6 +179,33 @@ body {
 	
 }
 
+.custom-carousel2 .carousel-item .row {
+    justify-content: center;
+}
+
+
+#carousel-acao .card-body {
+    background-color: rgb(33, 37, 41); 
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+
+#carousel-acao .card {
+    background-color: rgb(33, 37, 41);
+	border-radius: 10px;
+    overflow: hidden;
+}
+
+
+#carousel-acao .card:hover {
+    background-color: rgb(58, 62, 67);
+}
+
+#carousel-acao .card:hover .card-body {
+	background-color: rgb(58, 62, 67);
+}
+
 /* mobile carousel ação */
 @media (max-width: 575.98px) {
 	.custom-carousel2 {
@@ -186,6 +213,8 @@ body {
 	}
 
 }
+
+
 
 /* Fim de Carousel de ação */
 

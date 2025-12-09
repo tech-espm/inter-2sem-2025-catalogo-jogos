@@ -51,6 +51,10 @@
 
 		<!-- Carrossel de jogos de ação -->
 
+		<% const generosPermitidos = [1, 2]; 
+			const jogosAcao = jogos.filter(j => generosPermitidos.includes(j.id_genero_jogo)); 
+		%>
+
 		<div id="carousel-acao" class="carousel slide custom-carousel2 carousel-comum" data-bs-ride="false" data-bs-wrap="true">
 			<h1 class="subtitulo mt-3">Jogos de Ação</h1>
 			<div class="carousel-indicators"></div>
@@ -68,13 +72,13 @@
 
 		<!-- Fonte das imagens -->
 		<div id="carousel-acao-src" class="d-none">
-			<% for (let i=0; i < jogos.length; i++) { %>
+			<% for (let i=0; i < jogosAcao.length; i++) { %>
 				<div class="col">
-					<a class="card h-100" href="/jogo/<%= jogos[i].id_jogo %>">
-						<img src="/public/img/CapaJogos/<%= jogos[i].id_jogo %>.jpg" class="card-img-top" alt="">
+					<a class="card h-100" href="/jogo/<%= jogosAcao[i].id_jogo %>">
+						<img src="/public/img/CapaJogos/<%= jogosAcao[i].id_jogo %>.jpg" class="card-img-top" alt="">
 						<div class="card-body">
 							<p class="card-text">
-								<%= jogos[i].nm_jogo%>
+								<%= jogosAcao[i].nm_jogo%>
 							</p>
 						</div>
 					</a>
