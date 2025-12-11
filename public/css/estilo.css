@@ -631,7 +631,7 @@ a:hover {
 
 
 
-/* Começo da página Dados */
+/* Começo da página curiosidades */
 
 .container-fluid-dados{
     max-width: 900px;
@@ -647,14 +647,14 @@ a:hover {
     line-height: 1.55;
 }
 
-/* Títulos mais nítidos */
+
 .info h1, .info h2, .info h3{
     color: white;
     margin-bottom: 22px;
-    text-shadow: none; /* sombra removida */
+    text-shadow: none; 
 }
 
-/* Texto dos parágrafos com mais contraste */
+
 .info p{
     font-size: 1.15rem;
     color: rgba(255,255,255,0.92);
@@ -665,7 +665,7 @@ a:hover {
 	margin-bottom: 20px;
 }
 
-/* Divisores entre sessões */
+
 .divisao{
     padding-bottom: 30px;
     margin-bottom: 40px;

@@ -41,13 +41,13 @@ router.get("/sobre", wrap(async (req, res) => {
 	res.render("index/sobre", opcoes);
 }));
 
-router.get("/dados", wrap(async (req, res) => {
+router.get("/curiosidades", wrap(async (req, res) => {
 	let opcoes = {
-		titulo: "Dados",
+		titulo: "Curiosidades",
 	};
 
 
-	res.render("index/dados", opcoes);
+	res.render("index/curiosidades", opcoes);
 }));
 
 router.get("/wishlist", wrap(async (req, res) => {
