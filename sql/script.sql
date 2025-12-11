@@ -27,10 +27,10 @@ ENGINE = InnoDB;
 
 -- 2.3. Tabela `catalogojogos`.`subgenero_jogo`
 CREATE TABLE IF NOT EXISTS `catalogojogos`.`subgenero_jogo` (
-  `id_subgenero` INT NOT NULL AUTO_INCREMENT,
-  `nm_subgenero` VARCHAR(100) NOT NULL,
-  `desc_subgenero` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`id_subgenero`))
+  `id_subgenero_jogo` INT NOT NULL AUTO_INCREMENT,
+  `nm_subgenero_jogo` VARCHAR(100) NOT NULL,
+  `desc_subgenero_jogo` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id_subgenero_jogo`))
 ENGINE = InnoDB;
 
 -- 2.4. Tabela `catalogojogos`.`genero_jogo` (Depende de SUBGENERO_JOGO)
@@ -38,18 +38,11 @@ CREATE TABLE IF NOT EXISTS `catalogojogos`.`genero_jogo` (
   `id_genero_jogo` INT NOT NULL AUTO_INCREMENT,
   `nm_genero_jogo` VARCHAR(45) NOT NULL,
   `desc_genero_jogo` VARCHAR(255) NOT NULL,
-  `id_subgenero` INT NOT NULL,
-  PRIMARY KEY (`id_genero_jogo`),
-  INDEX `id_subgenero_idx` (`id_subgenero` ASC),
-  CONSTRAINT `fk_genero_subgenero`
-    FOREIGN KEY (`id_subgenero`)
-    REFERENCES `catalogojogos`.`subgenero_jogo` (`id_subgenero`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id_genero_jogo`))
 ENGINE = InnoDB;
 
 -- 2.5. Tabela `catalogojogos`.`estúdio`
-CREATE TABLE IF NOT EXISTS `catalogojogos`.`estúdio` (
+CREATE TABLE IF NOT EXISTS `catalogojogos`.`estudio` (
   `id_estudio` INT NOT NULL AUTO_INCREMENT,
   `nm_estudio` VARCHAR(255) NOT NULL,
   `pais_estudio` VARCHAR(50) NULL,
@@ -68,6 +61,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `catalogojogos`.`jogos` (
   `id_jogo` INT NOT NULL AUTO_INCREMENT,
   `id_genero_jogo` INT NOT NULL,
+  `id_subgenero_jogo` INT NOT NULL,
   `id_plataforma` INT NOT NULL,
   `id_estudio` INT NOT NULL,
   `id_idioma` INT NOT NULL,
@@ -78,6 +72,7 @@ CREATE TABLE IF NOT EXISTS `catalogojogos`.`jogos` (
   `dt_lancamento` DATETIME NULL,
   PRIMARY KEY (`id_jogo`),
   INDEX `id_genero_jogo_idx` (`id_genero_jogo` ASC),
+  INDEX `id_subgenero_jogo_idx` (`id_subgenero_jogo` ASC),
   INDEX `id_plataforma_idx` (`id_plataforma` ASC),
   INDEX `id_estudio_idx` (`id_estudio` ASC),
   INDEX `id_idioma_idx` (`id_idioma` ASC),
@@ -87,6 +82,11 @@ CREATE TABLE IF NOT EXISTS `catalogojogos`.`jogos` (
     REFERENCES `catalogojogos`.`genero_jogo` (`id_genero_jogo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
+  CONSTRAINT `fk_jogo_subgenero`
+    FOREIGN KEY (`id_subgenero_jogo`)
+    REFERENCES `catalogojogos`.`subgenero_jogo` (`id_subgenero_jogo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
   CONSTRAINT `fk_jogo_plataforma`
     FOREIGN KEY (`id_plataforma`)
     REFERENCES `catalogojogos`.`plataforma` (`id_plataforma`)
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `catalogojogos`.`jogos` (
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_jogo_estudio`
     FOREIGN KEY (`id_estudio`)
-    REFERENCES `catalogojogos`.`estúdio` (`id_estudio`)
+    REFERENCES `catalogojogos`.`estudio` (`id_estudio`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_jogo_idioma`

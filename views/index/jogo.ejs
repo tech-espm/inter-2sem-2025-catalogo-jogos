@@ -1,63 +1,68 @@
-<div class="container-fluid">
-	<div class="row" style="padding: 20px 0px;">
-		<div class="col-md-4" id="div_capa_jogo" style="   width: 200px; margin: 0px auto;">
-			<div>
-				<img src="/public/img/CapaJogosVertical/<%= jogos.id_jogo %>.jpg" alt="Capajogo">
+	<div class="container-fluid">
+		<div class="row" style="padding: 20px 0px;">
+			<div class="col-md-4" id="div_capa_jogo" style="   width: 200px; margin: 0px auto;">
+				<div>
+					<img src="/public/img/CapaJogosVertical/<%= jogos.id_jogo %>.jpg" alt="Capajogo">
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div>
+					<div id="desc_jogo">
+						<h3>
+							<%= jogos.nm_jogo %>
+						</h3>
+						<p>
+							Data de Lançamento: <%= new Date(jogos.dt_lancamento).toLocaleDateString('pt-BR') %>
+						</p>
+						<div>
+							<p>
+								<%= jogos.desc_jogo %>
+							</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="col-md-8">
-			<div>
-				<div id="desc_jogo">
-					<h3>
-						<%= jogos.nm_jogo %>
-					</h3>
-					<p>
-						Data de Lançamento: <%= new Date(jogos.dt_lancamento).toLocaleDateString('pt-BR') %>
-					</p>
-					<div>
-						<p>
-							<%= jogos.desc_jogo %>
-						</p>
-					</div>
+
+		<div class="row">
+			<div class="col-sm-4" style="text-align: center;">
+
+				<div>
+					<select id="avaliacao_user">
+						<option value="0">0 estrela</option>
+						<option value="1">1 estrela</option>
+						<option value="2">2 estrela</option>
+						<option value="3">3 estrela</option>
+						<option value="4">4 estrela</option>
+						<option value="5">5 estrela</option>
+					</select>
+				</div>
+
+				<div class="form-floating" style=" margin: 10px 0px;">
+					<input type="text" class="form-control" id="descricao_avaliacao_user" placeholder="Comente Aqui"
+						value="">
+					<label for="floatingInputInvalid">Comente Aqui!</label>
+				</div>
+
+				<button type="submit" class="btn btn-primary" onclick="cadastrarAvalicao()">
+					Postar
+				</button>
+			</div>
+
+			<div class="col-sm-8">
+				<div id="div_comentarios" style="color: #fff;">
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="col-sm-4" style="text-align: center;">
-
-			<div>
-				<select id="avaliacao_user">
-					<option value="0">0 estrela</option>
-					<option value="1">1 estrela</option>
-					<option value="2">2 estrela</option>
-					<option value="3">3 estrela</option>
-					<option value="4">4 estrela</option>
-					<option value="5">5 estrela</option>
-				</select>
-			</div>
-
-			<div class="form-floating" style=" margin: 10px 0px;">
-				<input type="text" class="form-control" id="descricao_avaliacao_user" placeholder="Comente Aqui"
-					value="">
-				<label for="floatingInputInvalid">Comente Aqui!</label>
-			</div>
-
-			<button type="submit" class="btn btn-primary" onclick="cadastrarAvalicao()">
-				Postar
-			</button>
-		</div>
-
-		<div class="col-sm-8">
-			<div id="div_comentarios" style="color: #fff;">
-			</div>
-		</div>
-
-	</div>
-
-</div>
-
+<style>
+	body {
+		background-size: cover;
+		background-image: url(/public/img/fundo.png);
+		background-position: center;
+	}
+</style>
 <!-- jQuery Bar Rating Plugin -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet"

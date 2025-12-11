@@ -6,7 +6,7 @@ html,
 body {
 	/* Para fazer o rodapé ficar sempre na parte inferior da página ;) */
 	min-height: 100vh;
-	background-color: rgb(13, 13, 13);
+	background-color: rgb(17, 17, 17);
 }
 
 .limitador {
@@ -71,6 +71,8 @@ body {
 	cursor: pointer;
 }
 
+/* fim página barra*/
+
 /* Home */
 
 .container-fluid-home {
@@ -78,6 +80,57 @@ body {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* fim página Home*/
+
+/* Carousel COMUNS */
+
+.carousel-comum {
+    position: relative;
+    overflow: visible;
+}
+
+.carousel-comum .carousel-inner {
+    overflow: hidden;
+}
+
+.carousel-comum .carousel-control-prev,
+.carousel-comum .carousel-control-next {
+    top: 50%;
+	transform: translateY(-50%);
+	width: 50px;
+	height: 80px;
+	opacity: 1;
+	background: rgba(0, 0, 0, 0.25); 
+	border-radius: 8px;
+	backdrop-filter: blur(3px);
+	transition: all 0.3s ease;
+}
+
+.carousel-comum .carousel-control-prev-icon,
+.carousel-comum .carousel-control-next-icon {
+	filter: brightness(1.2);
+	transition: filter 0.3s ease;
+}
+
+.carousel-comum .carousel-control-prev:hover,
+.carousel-comum .carousel-control-next:hover {
+	background: rgba(255, 255, 255, 0.18);
+}
+
+.carousel-comum .carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-comum .carousel-control-next:hover .carousel-control-next-icon {
+	filter: brightness(3);
+	transform: scale(1.08);
+}
+
+.carousel-comum .carousel-control-prev { left: -3.5rem; }
+.carousel-comum .carousel-control-next { right: -3.5rem; }
+
+.carousel-comum .carousel-indicators {
+    bottom: -2.5rem;
+}
+
+/* Fim do Carousel COMUNS */
 
 
 /* Carousel lançamentos */
@@ -88,100 +141,82 @@ body {
 }
 
 .custom-carousel {
-	overflow: visible;
-	max-width: 70%;
+	max-width: 50%;
 	margin-inline: auto;
 }
 
-.custom-carousel .carousel-item {
-	aspect-ratio: 16/9;
+.link-carousel {
+	position: relative;
+    display: block;
+    overflow: hidden;
 }
 
-.custom-carousel .carousel-item img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+.link-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
 }
 
-.custom-carousel .carousel-inner {
-	overflow: hidden;
+.link-carousel:hover img {
+    transform: scale(1.02);
+    filter: brightness(75%);
 }
 
-.custom-carousel .carousel-control-prev,
-.custom-carousel .carousel-control-next {
-	top: 50%;
-	transform: translateY(-50%);
-	width: 2.75rem;
-	opacity: 1;
-}
+/* fim página Carousel lançamentos*/
 
-.custom-carousel .carousel-control-prev {
-	left: -3.5rem;
-}
-
-.custom-carousel .carousel-control-next {
-	right: -3.5rem;
-}
-
-.custom-carousel .carousel-indicators {
-	bottom: -2.5rem;
-}
-
-/* Carousel populares */
+/* Carousel jogos de ação */
 
 .custom-carousel2 {
 	max-width: 85%;
 	margin: 100px auto 0;
-	position: relative;
-	overflow: visible;
 }
 
 .custom-carousel2 .card-img-top {
 	width: 100%;
 	aspect-ratio: 16/9;
 	object-fit: cover;
-	object-position: center;
+	
 }
 
-.custom-carousel2 .carousel-inner {
-	overflow: hidden;
-}
-
-.custom-carousel2 .fixo {
-	flex-wrap: nowrap;
+.custom-carousel2 .carousel-item .row {
+    justify-content: center;
 }
 
 
-.custom-carousel2 .carousel-control-prev,
-.custom-carousel2 .carousel-control-next {
-	top: 50%;
-	transform: translateY(-50%);
-	width: 2.75rem;
-	opacity: 1;
-}
-
-.custom-carousel2 .carousel-control-prev {
-	left: -3.5rem;
-}
-
-.custom-carousel2 .carousel-control-next {
-	right: -3.5rem;
+#carousel-acao .card-body {
+    background-color: rgb(33, 37, 41); 
+    color: white;
+    transition: background-color 0.3s ease;
 }
 
 
-.custom-carousel2 .carousel-indicators {
-	bottom: -2.5rem;
+#carousel-acao .card {
+    background-color: rgb(33, 37, 41);
+	border-radius: 10px;
+    overflow: hidden;
 }
 
-/* MOBILE */
+
+#carousel-acao .card:hover {
+    background-color: rgb(58, 62, 67);
+}
+
+#carousel-acao .card:hover .card-body {
+	background-color: rgb(58, 62, 67);
+}
+
+/* mobile carousel ação */
 @media (max-width: 575.98px) {
 	.custom-carousel2 {
 		width: clamp(80px, 90vw, 260px);
-		margin-inline: auto;
-		position: relative;
 	}
 
 }
+
+
+
+/* Fim de Carousel de ação */
 
 
 /* Aviso de login e Conta */
@@ -224,6 +259,8 @@ body {
 .cadastrar:hover {
 	color: rgb(62, 88, 237);
 }
+
+/* Fim do aviso de login */
 
 /* CSS da pagina Sobre Nós */
 
@@ -323,6 +360,8 @@ body {
 .botaocad2:hover {
 	background: #5c5c5c;
 }
+
+/* Fim do Perfil do usuário */
 
 /*Página cadastro */
 
@@ -454,8 +493,10 @@ body {
 #desc_jogo {
 	padding: 15px;
 	color: #fff;
-
 }
+
+
+
 
 /* FIM CSS PAGINA JOGO */
 
@@ -514,3 +555,119 @@ body {
 
 /* FIM CSS PAGINA CATALOGO */
 
+/*página wishlist*/
+
+.titulo_wish {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.pesquisa_wish {
+    max-width: 350px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #4b4b4b;
+    border: none;
+    color: white;
+    margin-left: 20px;
+}
+
+.pesquisa_wish::placeholder {
+    color: #dddddd;
+}
+
+.card_wish {
+    background: linear-gradient(to bottom, #2a2a2a, #181818);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 0 auto 25px auto;
+    max-width: 900px;
+}
+
+.jogo {
+    width: 100%;
+    max-width: 240px;
+    border-radius: 10px;
+}
+
+.info_wish h3 {
+    color: white;
+    margin-bottom: 8px;
+}
+
+.info_wish p {
+    color: #dddddd;
+    margin-bottom: 4px;
+}
+
+.plataformas_wish img {
+    width: 32px;
+    margin-left: 5px;
+}
+
+a {
+    color: #8ab4ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/*fim da página wishlist*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Começo da página Dados */
+
+.container-fluid-dados{
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: #212529;
+    padding: 40px 30px;
+    border-radius: 12px;
+}
+
+.info{
+    text-align: center;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.55;
+}
+
+/* Títulos mais nítidos */
+.info h1, .info h2, .info h3{
+    color: white;
+    margin-bottom: 22px;
+    text-shadow: none; /* sombra removida */
+}
+
+/* Texto dos parágrafos com mais contraste */
+.info p{
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.92);
+    margin-bottom: 25px;
+}
+
+.info img{
+	margin-bottom: 20px;
+}
+
+/* Divisores entre sessões */
+.divisao{
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+}

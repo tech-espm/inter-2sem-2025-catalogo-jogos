@@ -41,6 +41,15 @@ router.get("/sobre", wrap(async (req, res) => {
 	res.render("index/sobre", opcoes);
 }));
 
+router.get("/dados", wrap(async (req, res) => {
+	let opcoes = {
+		titulo: "Dados",
+	};
+
+
+	res.render("index/dados", opcoes);
+}));
+
 router.get("/wishlist", wrap(async (req, res) => {
 
 	let usuario = {
@@ -65,10 +74,9 @@ router.get("/wishlist", wrap(async (req, res) => {
 
 	let opcoes = {
 		titulo: "Listagem de Produtos",
-		produtos: produtosVindosDoBanco
 	};
 
-	res.render("index/wishlist", usuario);
+	res.render("index/wishlist", opcoes);
 }));
 
 router.get("/login", wrap(async (req, res) => {
