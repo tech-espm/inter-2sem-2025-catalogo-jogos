@@ -198,6 +198,8 @@ router.post("/api/deletar",(async (req, res) => {
 
 		await sql.query("delete from avaliacoes where id_avaliacao = (?);", [id_avaliacao]);
 	});
+
+	res.json(true)
 }));
 
 module.exports = router;
