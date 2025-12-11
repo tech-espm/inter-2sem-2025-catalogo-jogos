@@ -618,3 +618,56 @@ a:hover {
 
 /*fim da página wishlist*/
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Começo da página Dados */
+
+.container-fluid-dados{
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: #212529;
+    padding: 40px 30px;
+    border-radius: 12px;
+}
+
+.info{
+    text-align: center;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.55;
+}
+
+/* Títulos mais nítidos */
+.info h1, .info h2, .info h3{
+    color: white;
+    margin-bottom: 22px;
+    text-shadow: none; /* sombra removida */
+}
+
+/* Texto dos parágrafos com mais contraste */
+.info p{
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.92);
+    margin-bottom: 25px;
+}
+
+.info img{
+	margin-bottom: 20px;
+}
+
+/* Divisores entre sessões */
+.divisao{
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+}
