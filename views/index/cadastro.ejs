@@ -2,13 +2,26 @@
     <h1 class="h1cad">Criar conta</h1>
 
     <form>
-        <input class="inputado" type="text" placeholder="Nome de usuário">
-        <input class="inputado" type="email" placeholder="Email">
-        <input class="inputado" type="password" placeholder="Senha">
-        <input class="inputado" type="password" placeholder="Repetir senha">
-        
-        <button class="botaocad" type="submit">Cadastrar</button>
+        <input class="inputado" id="nome" type="text" placeholder="Nome de usuário">
+        <input class="inputado" id="input_email" type="email" placeholder="Email">
+        <input class="inputado" id="senha" type="password" placeholder="Senha">
+        <input class="inputado" id="senhaConfirmada" type="password" placeholder="Repetir senha" >
+
+        <button class="botaocad" type="submit" onclick="cadastrarUsuario()">Cadastrar</button>
     </form>
 
     <p class="login-text">Já tem uma conta? <a href="login">Entrar</a></p>
 </div>
+
+<script type="text/javascript">
+
+    async function cadastrarUsuario() {
+         let nome = document.getElementById("nome").value;
+    let email = document.getElementById("input_email").value;
+    let senha = document.getElementById("senha").value;
+    let senhaConfirmada = document.getElementById("senhaConfirmada").value;
+        alert(nome,email,senha,senhaConfirmada);
+
+
+
+    }
