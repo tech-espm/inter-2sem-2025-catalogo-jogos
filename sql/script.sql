@@ -127,7 +127,21 @@ CREATE TABLE IF NOT EXISTS `catalogojogos`.`avaliacoes` (
 ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `catalogojogos`.`wishlist` (
+  `id_wishlist` INT NOT NULL AUTO_INCREMENT,
   `id_usuario` INT NOT NULL,
   `id_jogo` INT NOT NULL,
-  `dt_adicionado` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP);
-
+  `dt_adicionado` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_wishlist`),
+  INDEX `wishlist_id_jogo_idx` (`id_jogo` ASC),
+  UNIQUE KEY `wishlist_id_usuario_id_jogo_un` (`id_usuario`, `id_jogo`),
+  CONSTRAINT `fk_wishlist_usuario`
+    FOREIGN KEY (`id_usuario`)
+    REFERENCES `catalogojogos`.`usuario` (`id_usuario`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_wishlist_jogo`
+    FOREIGN KEY (`id_jogo`)
+    REFERENCES `catalogojogos`.`jogos` (`id_jogo`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);

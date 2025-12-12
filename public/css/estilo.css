@@ -212,6 +212,13 @@ body {
 		width: clamp(80px, 90vw, 260px);
 	}
 
+	.info_wish {
+		    margin: 12px 0px;
+	}
+	.btn_wishlist {
+		width: 100% !important; 
+	}
+
 }
 
 
@@ -495,6 +502,11 @@ body {
 	color: #fff;
 }
 
+.btn_wishlist {
+	text-align: center;
+    width: 75px;
+}
+
 
 
 
@@ -558,19 +570,16 @@ body {
 /*página wishlist*/
 
 .titulo_wish {
-    margin-left: 20px;
-    margin-bottom: 20px;
     color: white;
+    margin-top: 10px;
 }
 
 .pesquisa_wish {
-    max-width: 350px;
+   max-width: 350px;
     padding: 12px;
-    border-radius: 8px;
     background: #4b4b4b;
     border: none;
-    color: white;
-    margin-left: 20px;
+    
 }
 
 .pesquisa_wish::placeholder {
@@ -585,50 +594,21 @@ body {
     max-width: 900px;
 }
 
-.jogo {
-    width: 100%;
-    max-width: 240px;
+.jogo_wish {
     border-radius: 10px;
 }
 
-.info_wish h3 {
-    color: white;
-    margin-bottom: 8px;
+.info_wish  {
+	color: #FFF;
 }
-
-.info_wish p {
-    color: #dddddd;
-    margin-bottom: 4px;
+.plataformas_wish {
+	text-align: center;
 }
-
 .plataformas_wish img {
-    width: 32px;
-    margin-left: 5px;
+    width: 50px;
 }
-
-a {
-    color: #8ab4ff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
 
 /*fim da página wishlist*/
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* Começo da página Dados */

@@ -18,6 +18,12 @@
 							<p>
 								<%= jogos.desc_jogo %>
 							</p>
+							<div class="btn_wishlist">
+							<a onclick="AdicionarWishlist(<%= jogos.id_jogo %>)" style="cursor: pointer; font-size: 35px;">
+								<i class="bi bi-joystick"></i>
+								<h6>Wishlist</h6>
+							</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -199,5 +205,36 @@
 		}
 		
 	}
+
+	async function AdicionarWishlist(id_jogo) {
+
+		let adcionar = {
+			id_jogo: id_jogo
+		};
+
+		try {
+
+			let response = await fetch("/api/adicionarWishlist", {
+				method: "POST",
+				body: JSON.stringify(adcionar),
+				headers: {
+					"content-type": "application/json"
+				}
+			});
+
+			if (!response.ok) {
+				alert("Ocorreu um erro ao adcionar :(");
+			} else {
+				alert("Jogo Adcionado na Wishlist")
+				window.location.reload(); 
+			}
+
+			
+	
+		} catch (ex) {
+			alert("Ocorreu um erro de rede ao Adcionar o jogo: " + ex.message)
+		}
+		
+	} 
 
 </script>

@@ -1,55 +1,89 @@
-
 <div class="container-fluid">
-    <div class="row mb-3">
-        <div class="col-sm-12">
-            <h2 class="titulo_wish">Wishlist de “Usuário”</h2>
-        </div>
+    <div>
+        <h2 class="titulo_wish">Wishlist de <%= usuario.nm_usuario %>
+        </h2>
     </div>
+
 
     <div class="row mb-4">
         <div class="col-sm-12">
+            <label for="Pesquiar jogo"></label>
             <input class="pesquisa_wish form-control" type="text" placeholder="Pesquisar">
         </div>
     </div>
 
+    <% for(let i=0; i < jogos.length; i++) {%>
+        <div class="row card_wish">
 
-    <div class="row card_wish">
+            <div class="col-sm-4">
+                <div>
+                    <a href="/jogo/<%= jogos[i].id_jogo %>">
+                    <img class="jogo_wish" src="public\img\CapaJogos\<%=jogos[i].id_jogo %>.jpg">
+                    </a>    
+                </div>
+            </div>
 
-        <div class="col-sm-4">
-            <img class="jogo" src="public\img\CapaJogos\1.jpg">
+            <div class="col-sm-5 ">
+                <div class="info_wish">
+                    <h3>
+                        <%=jogos[i].nm_jogo%>
+                    </h3>
+                    <p>Avaliações dos usuários: ★★★★★</p>
+                    <p>Data de lançamento: <%= new Date(jogos[i].dt_lancamento).toLocaleDateString('pt-BR')%>
+                    </p>
+                    <div class="del_wish">
+                        <a onclick="deletarWishlist(<%= jogos[i].id_jogo %>)" style="cursor: pointer;"><i class="bi bi-trash"
+                                style="color: rgb(184, 64, 64);"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 ">
+                <div style="position: relative;">
+                    <div class="plataformas_wish">
+
+                        <img src="public/img/CapaPlataformas/Xbox.png">
+                        <img src="public/img/CapaPlataformas/PlayStation.png">
+
+                    </div>
+                    
+                </div>
+            </div>
+
         </div>
+        <%} %>
 
-        <div class="col-sm-5 info_wish">
-            <h3>Hollow Knight: Silksong</h3>
-            <p>Avaliações dos usuários: ★★★★★</p>
-            <p>Data de lançamento: 04/09/2025</p>
-        </div>
-
-        <div class="col-sm-3 plataformas_wish text-end">
-            <img src="public/img/CapaPlataformas/Xbox.png">
-            <img src="public/img/CapaPlataformas/PlayStation.png">
-        </div>
-
-    </div>
-
-
-    <div class="row card_wish">
-
-        <div class="col-sm-4">
-            <img class="jogo" src="public\img\CapaJogos\2.jpg">
-        </div>
-
-        <div class="col-sm-5 info_wish">
-            <h3>1000xRESIST</h3>
-            <p>Avaliações dos usuários: ★★★★☆</p>
-            <p>Data de lançamento: 09/05/2024</p>
-        </div>
-
-        <div class="col-sm-3 plataformas_wish text-end">
-            <img src="public/img/CapaPlataformas/Xbox.png">
-            <img src="public/img/CapaPlataformas/Steam.png">
-        </div>
-
-    </div>
 
 </div>
+<script type="text/javascript">
+
+    async function deletarWishlist(id_jogo) {
+
+		let deletar = {
+			id_jogo: id_jogo
+		};
+
+		try {
+
+			let response = await fetch("/api/deletarWishlist", {
+				method: "POST",
+				body: JSON.stringify(deletar),
+				headers: {
+					"content-type": "application/json"
+				}
+			});
+
+			if (!response.ok) {
+				alert("Ocorreu um erro ao deletar :(");
+			} else {
+				window.location.reload(); 
+			}
+	
+		} catch (ex) {
+			alert("Ocorreu um erro de rede ao deletar a pessoa: " + ex.message)
+		}
+		
+	}
+
+</script>

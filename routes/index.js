@@ -1,6 +1,7 @@
 const express = require("express");
 const wrap = require("express-async-error-wrapper");
 const sql = require("../data/sql");
+const { platform } = require("os");
 
 
 const router = express.Router();
@@ -51,30 +52,53 @@ router.get("/dados", wrap(async (req, res) => {
 }));
 
 router.get("/wishlist", wrap(async (req, res) => {
+	let usuario
+	let jogos
+	let avaliacoes
+	let plataforma
+	let wishlist
 
-	let usuario = {
-		id_user: 1,
-		nome_usuario: "Rafel",
-		genero_fav: "Ação",
-		wishlist: [
-			{
-				id_wishlist: 1,
-				id_jogo: 5,
-				nm_jogo: "Stardew Valley"
-			},
-			{
-				id_wishlist: 2,
-				id_jogo: 6,
-				nm_jogo: "Hollow Knight: Silksong"
-			}
-		]
-	};
+	await sql.connect(async sql => {
 
-	let produtosVindosDoBanco = usuario;
+		usuario = await sql.query(
+			`SELECT id_usuario, nm_usuario, email_usuario
+			FROM usuario
+			WHERE id_usuario = 1
+			;`
+		);
+		usuario = usuario[0];
+		jogos = await sql.query(
+			`SELECT j.*
+			FROM wishlist w
+			JOIN jogos j ON j.id_jogo = w.id_jogo
+			ORDER BY j.id_jogo DESC;
+			;`
+		);
+		avaliacoes = await sql.query(
+			`SELECT a.*
+			FROM avaliacoes a
+			JOIN wishlist w ON w.id_jogo = a.id_jogo;`
+		);
+		plataforma = await sql.query(
+			`SELECT p.*
+			FROM wishlist w
+			JOIN jogos j ON j.id_jogo = w.id_jogo
+			JOIN plataforma p ON p.id_plataforma = j.id_plataforma;`
+		);
+		wishlist = await sql.query(
+			`SELECT u.* FROM wishlist w
+			JOIN usuario u ON w.id_usuario = u.id_usuario;`
+		)
 
+	});
 	let opcoes = {
-		titulo: "Listagem de Produtos",
-	};
+		titulo: "Wishlist",
+		usuario: usuario,
+		jogos: jogos,
+		avaliacoes: avaliacoes,
+		plataforma: plataforma,
+		wishlist: wishlist
+	}
 
 	res.render("index/wishlist", opcoes);
 }));
@@ -117,13 +141,13 @@ router.get("/jogo/:id_jogo", wrap(async (req, res) => {
 
 	});
 
-	for (let i = 0; i < comentarios.lenth; i++ ) {
+	for (let i = 0; i < comentarios.lenth; i++) {
 		html += `
 		<hr/>
 		<p> ${comentarios[i].desc_avaliacao}
 		</p>`
 	};
-	
+
 	let opcoes = {
 		titulo: "",
 		jogos: jogos[0],
@@ -154,7 +178,7 @@ router.get("/catalogo", wrap(async (req, res) => {
 
 
 // ------------- API -------------------------------//
-router.post("/api/cadastrar", (async (req, res) => {
+router.post("/api/cadastrar", wrap(async (req, res) => {
 
 	let avaliacao_jogo = req.body;
 
@@ -190,7 +214,7 @@ router.post("/api/cadastrar", (async (req, res) => {
 
 }));
 
-router.post("/api/deletar",(async (req, res) => {
+router.post("/api/deletar", wrap(async (req, res) => {
 
 	const { id_avaliacao } = req.body;
 
@@ -201,5 +225,40 @@ router.post("/api/deletar",(async (req, res) => {
 
 	res.json(true)
 }));
+
+
+router.post("/api/deletarWishlist", wrap(async (req, res) => {
+
+	const { id_jogo } = req.body;
+
+	await sql.connect(async sql => {
+
+		await sql.query("delete from wishlist where id_jogo = (?);", [id_jogo]);
+	});
+
+	res.json(true)
+}));
+
+router.post("/api/adicionarWishlist", wrap(async (req, res) => {
+
+	const { id_jogo } = req.body;
+	let id_user = 1
+
+	let parametros = [
+		id_user,
+		id_jogo
+		]
+
+	await sql.connect(async sql => {
+
+		await sql.query("insert into wishlist (id_usuario, id_jogo) values(?, ?); ", parametros);
+	});
+
+	res.json(true)
+}));
+
+
+
+
 
 module.exports = router;
