@@ -9,7 +9,8 @@
 		});
 		%>
 
-		<div id="carousel1" class="carousel slide custom-carousel carousel-comum" data-bs-ride="false" data-bs-wrap="true">
+		<div id="carousel1" class="carousel slide custom-carousel carousel-comum" data-bs-ride="false"
+			data-bs-wrap="true">
 			<h1 class="subtitulo mt-3">Lançamentos Populares</h1>
 			<% if (jogos2025.length> 0) { %>
 
@@ -51,77 +52,127 @@
 
 		<!-- Carrossel de jogos de ação -->
 
-		<% const generosPermitidos = [1, 2]; 
-			const jogosAcao = jogos.filter(j => generosPermitidos.includes(j.id_genero_jogo)); 
-		%>
+		<% const generosPermitidos=[1, 2]; const jogosAcao=jogos.filter(j=>
+			generosPermitidos.includes(j.id_genero_jogo));
+			%>
 
-		<div id="carousel-acao" class="carousel slide custom-carousel2 carousel-comum" data-bs-ride="false" data-bs-wrap="true">
-			<h1 class="subtitulo mt-3">Jogos de Ação</h1>
-			<div class="carousel-indicators"></div>
-			<div class="carousel-inner"></div>
+			<div id="carousel-acao" class="carousel slide custom-carousel2 carousel-comum" data-bs-ride="false"
+				data-bs-wrap="true">
+				<h1 class="subtitulo mt-3">Jogos de Ação</h1>
+				<div class="carousel-indicators"></div>
+				<div class="carousel-inner"></div>
 
-			<button class="carousel-control-prev" type="button" data-bs-target="#carousel-acao" data-bs-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Anterior</span>
-			</button>
-			<button class="carousel-control-next" type="button" data-bs-target="#carousel-acao" data-bs-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Próximo</span>
-			</button>
-		</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carousel-acao"
+					data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Anterior</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carousel-acao"
+					data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Próximo</span>
+				</button>
+			</div>
 
-		<!-- Fonte das imagens -->
-		<div id="carousel-acao-src" class="d-none">
-			<% for (let i=0; i < jogosAcao.length; i++) { %>
-				<div class="col">
-					<a class="card h-100" href="/jogo/<%= jogosAcao[i].id_jogo %>">
-						<img src="/public/img/CapaJogos/<%= jogosAcao[i].id_jogo %>.jpg" class="card-img-top" alt="">
-						<div class="card-body">
-							<p class="card-text">
-								<%= jogosAcao[i].nm_jogo%>
-							</p>
-						</div>
-					</a>
+			<!-- Fonte das imagens -->
+			<div id="carousel-acao-src" class="d-none">
+				<% for (let i=0; i < jogosAcao.length; i++) { %>
+					<div class="col">
+						<a class="card h-100" href="/jogo/<%= jogosAcao[i].id_jogo %>">
+							<img src="/public/img/CapaJogos/<%= jogosAcao[i].id_jogo %>.jpg" class="card-img-top"
+								alt="">
+							<div class="card-body">
+								<p class="card-text">
+									<%= jogosAcao[i].nm_jogo%>
+								</p>
+							</div>
+						</a>
+					</div>
+					<% } %>
+			</div>
+
+
+
+
+			<!-- Carrossel de jogos mundo aberto -->
+
+			<% const generosPermitidoss=[11, 18]; const jogosPlataforma=jogos.filter(j=>
+				generosPermitidoss.includes(j.id_genero_jogo));
+				%>
+
+				<div id="carousel-plataforma" class="carousel slide custom-carousel2 carousel-comum"
+					data-bs-ride="false" data-bs-wrap="true">
+					<h1 class="subtitulo mt-3">Jogos de Plataforma</h1>
+					<div class="carousel-indicators"></div>
+					<div class="carousel-inner"></div>
+
+					<button class="carousel-control-prev" type="button" data-bs-target="#carousel-plataforma"
+						data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Anterior</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carousel-plataforma"
+						data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Próximo</span>
+					</button>
 				</div>
-				<% } %>
-		</div>
 
-		<!-- Script que constroi o carrossel baseado no tamanho da tela -->
+				<!-- Fonte das imagens -->
+				<div id="carousel-plataforma-src" class="d-none">
+					<% for (let i=0; i < jogosPlataforma.length; i++) { %>
+						<div class="col">
+							<a class="card h-100" href="/jogo/<%= jogosPlataforma[i].id_jogo %>">
+								<img src="/public/img/CapaJogos/<%= jogosPlataforma[i].id_jogo %>.jpg"
+									class="card-img-top" alt="">
+								<div class="card-body">
+									<p class="card-text">
+										<%= jogosPlataforma[i].nm_jogo%>
+									</p>
+								</div>
+							</a>
+						</div>
+						<% } %>
+				</div>
 
-		<script>
-			function createResponsiveCarousel(carouselId, srcId, breakpoints = { sm: 1, md: 2, lg: 4 }) {
 
-				const root = document.getElementById(carouselId);
-				const inner = root.querySelector('.carousel-inner');
-				const indicators = root.querySelector('.carousel-indicators');
-				const src = document.getElementById(srcId);
 
-				if (!root || !inner || !indicators || !src) {
-					console.error("IDs inválidos no carrossel:", carouselId, srcId);
-					return;
-				}
+				<!-- Script que constroi o carrossel baseado no tamanho da tela -->
 
-				const items = [...src.children].map(el => el.outerHTML);
+				<script>
+					function createResponsiveCarousel(carouselId, srcId, breakpoints = { sm: 1, md: 2, lg: 4 }) {
 
-				function perSlide() {
-					const w = window.innerWidth;
-					if (w < 576) return breakpoints.sm;
-					if (w < 992) return breakpoints.md;
-					return breakpoints.lg;
-				}
+						const root = document.getElementById(carouselId);
+						const inner = root.querySelector('.carousel-inner');
+						const indicators = root.querySelector('.carousel-indicators');
+						const src = document.getElementById(srcId);
 
-				function buildCarousel() {
-					const n = perSlide();
-					inner.innerHTML = "";
-					indicators.innerHTML = "";
+						if (!root || !inner || !indicators || !src) {
+							console.error("IDs inválidos no carrossel:", carouselId, srcId);
+							return;
+						}
 
-					items.forEach((_, idx) => {
-						if (idx % n !== 0) return;
+						const items = [...src.children].map(el => el.outerHTML);
 
-						const chunk = items.slice(idx, idx + n).join('');
-						const active = idx === 0 ? "active" : "";
+						function perSlide() {
+							const w = window.innerWidth;
+							if (w < 576) return breakpoints.sm;
+							if (w < 992) return breakpoints.md;
+							return breakpoints.lg;
+						}
 
-						inner.insertAdjacentHTML("beforeend", `
+						function buildCarousel() {
+							const n = perSlide();
+							inner.innerHTML = "";
+							indicators.innerHTML = "";
+
+							items.forEach((_, idx) => {
+								if (idx % n !== 0) return;
+
+								const chunk = items.slice(idx, idx + n).join('');
+								const active = idx === 0 ? "active" : "";
+
+								inner.insertAdjacentHTML("beforeend", `
                 			<div class="carousel-item ${active}">
                     			<div class="row g-3 row-cols-${n}">
                         			${chunk}
@@ -129,7 +180,7 @@
                 			</div>
             			`);
 
-						indicators.insertAdjacentHTML("beforeend", `
+								indicators.insertAdjacentHTML("beforeend", `
                 			<button type="button"
                     			data-bs-target="#${carouselId}"
                     			data-bs-slide-to="${idx / n}"
@@ -137,39 +188,95 @@
                     			aria-label="Slide ${idx / n + 1}">
                 			</button>
             			`);
-					});
+							});
 
-					bootstrap.Carousel.getInstance(root)?.dispose();
-					new bootstrap.Carousel(root, { ride: false, wrap: true });
-				}
+							bootstrap.Carousel.getInstance(root)?.dispose();
+							new bootstrap.Carousel(root, { ride: false, wrap: true });
+						}
+
+
+						let t;
+						window.addEventListener("resize", () => {
+							clearTimeout(t);
+							t = setTimeout(buildCarousel, 150);
+						});
+
+						buildCarousel();
+					}
+				</script>
+
+				<script>
+					createResponsiveCarousel("carousel-acao", "carousel-acao-src");
+				</script>
+
+				<script>
+					createResponsiveCarousel("carousel-plataforma", "carousel-plataforma-src");
+				</script>
+
+
+
+
+
+				<!-- Aviso de login e conta -->
+
+				<div class="aviso">
+					<p>Faça login para uma experiência personalizada.</p>
+					<a class="botaov" href="login">Entrar<a>
+							<p class="separar">Escreva e compartilhe suas resenhas. <a class="cadastrar"
+									href="cadastro">Cadastre-se</a> para salvar seus jogos. </p>
+
+				</div>
+
+
+
+
+				<!-- Recomendação -->
+				<div class="dupla-wrapper">
+					<div class="section-banner">
+        				<h1 class="section-title">VENCEDORES</h1>
+        				<span class="section-subtitle">Jogo do ano</span>
+    				</div>
+
+					<div class="dupla-card-container">
+						<!-- CARD 1 -->
+						<div class="dupla-card">
+							<a href="/jogo/<%= jogos[08].id_jogo %>">
+								<img src="/public/img/CapaJogos/<%= jogos[08].id_jogo %>.jpg" alt="">
+							</a>
+							<div class="titulo">
+								<%= jogos[08].nm_jogo %>
+							</div>
+						</div>
+
+						<!-- CARD 2 -->
+						<div class="dupla-card">
+							<a href="/jogo/<%= jogos[80].id_jogo %>">
+								<img src="/public/img/CapaJogos/<%= jogos[80].id_jogo %>.jpg" alt="">
+							</a>
+							<div class="titulo">
+								<%= jogos[80].nm_jogo %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+
 
 				
-				let t;
-				window.addEventListener("resize", () => {
-					clearTimeout(t);
-					t = setTimeout(buildCarousel, 150);
-				});
-
-				buildCarousel();
-			}
-		</script>
-
-		<script>
-			createResponsiveCarousel("carousel-acao", "carousel-acao-src");
-		</script>
 
 
 
 
 
-		<!-- Aviso de login e conta -->
 
-		<div class="aviso">
-			<p>Faça login para uma experiência personalizada.</p>
-			<a class="botaov" href="login">Entrar<a>
-					<p class="separar">Escreva e compartilhe suas resenhas. <a class="cadastrar"
-							href="cadastro">Cadastre-se</a> para salvar seus jogos. </p>
 
-		</div>
+
+
+
+
+
+
 
 </div>
