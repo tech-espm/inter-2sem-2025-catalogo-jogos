@@ -201,7 +201,7 @@ INSERT INTO usuario (id_usuario, nm_usuario, email_usuario) VALUES
 
 -- 3.7. INSERTS PARA A TABELA jogos (Depende de genero_jogo, plataforma, estúdio, idioma)
 INSERT INTO jogos (id_jogo, id_genero_jogo, id_subgenero_jogo, id_plataforma, id_estudio, id_idioma, nm_jogo, duracao_jogo, classIndicativa_jogo, desc_jogo, dt_lancamento) VALUES
-(1, 1, 2, 1, 1, 1, 'Hollow Knight: Silksong', 30, '10+', 'Aguardada sequência do aclamado metroidvania.', '2025-09-04'),
+(1, 1, 2, 1, 1, 1, 'Hollow Knight: Silksong', 30, '10+', 'Descubra um reino vasto e amaldiçoado em Hollow Knight: Silksong! Explore, lute e sobreviva enquanto você ascende ao pico de uma terra governada pela seda e por canções.', '2025-09-04'),
 (2, 2, 3, 1, 2, 1, 'Battlefield 6', 40, '18+', 'Guerra moderna em larga escala com destruição massiva.', '2025-08-09'),
 (3, 3, 4, 1, 3, 9, 'Hades 2', 25, '12+', 'Desafie o titã do tempo com a ajuda dos deuses do Olimpo.', '2025-09-25'),
 (4, 4, 5, 1, 4, 9, 'Plants vs. Zombies: Replanted', 20, 'Livre', 'Defenda seu jardim de hordas de zumbis com novas plantas.', '2025-10-23'),
@@ -209,7 +209,7 @@ INSERT INTO jogos (id_jogo, id_genero_jogo, id_subgenero_jogo, id_plataforma, id
 (6, 6, 7, 4, 6, 9, 'Mario Kart World', 30, 'Livre', 'Corridas de kart em um mundo aberto com pistas interligadas.', '2025-06-05'),
 (7, 2, 18, 1, 7, 8, 'Escape from Duckvov', 150, '18+', 'FPS tático e realista com foco em extração e sobrevivência.', '2025-01-24'),
 (8, 16, 16, 1, 8, 1, 'Jurassic World Evolution 3', 60, '12+', 'Construa e gerencie o mais avançado parque de dinossauros.', '2025-10-21'),
-(9, 3, 12, 1, 16, 1, 'Baldurs Gate 3', 100, '18+', 'Volte aos Reinos Esquecidos em um conto de amizade e traição.', '2023-08-03'),
+(9, 3, 12, 1, 16, 1, 'Baldurs Gate 3', 100, '18+', 'Reúna seu grupo e retorne aos Reinos Esquecidos em uma história de companheirismo e traição, sacrifício e sobrevivência, e a sedução do poder absoluto.', '2023-08-03'),
 (10, 17, 12, 1, 12, 1, 'The Witcher 3: Wild Hunt', 100, '16+', 'Cace monstros como o bruxo Geralt de Rivia em um vasto mundo aberto.', '2015-05-18'),
 (11, 29, 34, 2, 10, 9, 'The Last of Us Part I', 15, '18+', 'Sobreviva a uma jornada brutal em um mundo pós-pandêmico.', '2022-09-02'),
 (12, 29, 34, 2, 10, 9, 'God of War Ragnarök', 30, '18+', 'Kratos e Atreus enfrentam o fim dos tempos nórdico.', '2022-11-09'),
@@ -229,7 +229,7 @@ INSERT INTO jogos (id_jogo, id_genero_jogo, id_subgenero_jogo, id_plataforma, id
 (26, 9, 17, 1, 26, 1, 'Apex Legends', 120, '16+', 'Battle royale hero shooter em esquadrões que lutam em arenas cheias de mobilidade e habilidades.', '2019-02-04'),
 (27, 16, 15, 1, 27, 1, 'Satisfactory', 120, '12+', 'Simulador de fábrica em primeira pessoa focado em automação e exploração em um planeta alienígena.', '2024-09-10'),
 (28, 1, 1, 1, 28, 1, 'Castle Crashers', 15, '12+', 'Beat them up cooperativo medieval com até quatro cavaleiros e muita pancadaria colorida.', '2008-08-27'),
-(29, 21, 22, 1, 29, 1, '1000xResist', 20, '16+', 'Aventura sci-fi narrativa sobre clones, memória e resistência em um futuro pós-apocalíptico.', '2024-05-09'),
+(29, 21, 22, 1, 29, 1, '1000xResist', 20, '16+', '1000xRESIST é uma eletrizante aventura de ficção científica. O ano é incerto, e uma doença trazida por uma invasão alienígena força a humanidade a viver no subsolo. Você é a Observadora, servindo fielmente à GRANDE MÃE, até descobrir um segredo chocante que muda tudo.', '2024-05-09'),
 (30, 3, 28, 1, 30, 1, 'Persona 4 Golden', 80, '16+', 'JRPG escolar em que um grupo de amigos investiga assassinatos misteriosos atravessando para um “mundo da TV”.', '2020-06-13'),
 (31, 3, 13, 1, 31, 1, 'Undertale', 10, '12+', 'RPG indie em que suas escolhas de combate e misericórdia definem a história.', '2015-09-15'),
 (32, 3, 28, 1, 31, 1, 'Deltarune', 15, '12+', 'Nova aventura de Toby Fox com batalhas em grupo e narrativa cheia de mistérios.', '2018-10-31'),

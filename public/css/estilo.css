@@ -40,6 +40,11 @@ body {
 
 /* Nossos css */
 
+.logo{
+    max-width: 35px;
+    margin-top: -4px;
+    height: auto;
+}
 
 /*barra*/
 .titulo {
@@ -278,47 +283,71 @@ body {
 /* CSS da pagina Sobre Nós */
 
 .div_descricao_projeto {
-	height: 300px;
-	text-align: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 #descricao_projeto {
-	color: #ffffff;
-	text-align: center;
-	margin: 100px auto;
-}
-
-.foto_integrantes {
-	max-height: 100%;
-}
-
-.card-text {
-	color: #808080;
-}
-
-.card {
-	transition: all 0.5s;
-	margin: 5px auto;
-}
-
-.descricao_card h4 {
-	font-size: 1rem;
+    color: #ffffff;
+    max-width: 80%;
 }
 
 .descricao_card a {
-	text-decoration: none;
-	color: #808080;
+    color: #808080;           /* mesma cor do texto */
+    text-decoration: none;
+    font-weight: 500;
 }
 
-.card:hover {
-	background-color: #72788C;
-	color: #fff;
+.descricao_card a:hover {
+    color: #ffffff;           /* acompanha o hover do card */
+    text-decoration: none;
 }
 
-.card:hover .icon,
-.card:hover .card-text,
-.descricao_card:hover a {
-	color: #fff;
+.titulo-secao {
+    color: #fff;
+    margin: 2rem 0 1rem;
+    text-align: left;
+}
+
+.card-integrante {
+    max-width: 16rem;
+    min-height: 100%;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    margin: auto;
+}
+
+.card-integrante:hover {
+    background-color: #72788C;
+    color: #fff;
+}
+
+.card-integrante:hover .card-text,
+.card-integrante:hover a {
+    color: #fff;
+}
+
+.foto_integrantes {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.logo-projeto {
+    max-width: 360px;
+    width: 100%;
+    height: auto;
+}
+
+.tamanho {
+	font-size: 20px;
+}
+
+.ideia {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.55;
 }
 
 /* Fim do CSS da pagina Sobre Nós */
@@ -658,128 +687,6 @@ body {
     border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* CSS destaques */
 .dupla-wrapper {
     max-width: 85%;
@@ -885,7 +792,6 @@ body {
         width: 100%;
     }
 }
-
 
 
 
