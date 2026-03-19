@@ -9,8 +9,7 @@
 ### 2025-02
 
 ## Visão Geral
-
-## Participantes
+O Game Box consiste em um catálogo de jogos para a comunidade gamer, servindo como um local de interação para conversar sobre seus jogos favoritos, salvar os que pretende jogar e favoritar os que mais gostou.
 
 - [Gustavo Knorre](https://github.com/GKnorre)
 - [Gustavo Santana](https://github.com/tec-guga)
@@ -20,8 +19,11 @@
 - [Pedro Veiga](https://github.com/pedro-veiga18)
 
 ## Objetivos do Projeto
-
+Este projeto teve como intuito colocar em prática os conhecimentos adquiridos ao longo do semestre, reforçando o aprendizado e contribuindo para a preparação para o mercado de trabalho.
 ## Configuração do Projeto
+O back-end foi desenvolvido utilizando Node.js, seguindo boas práticas de desenvolvimento web, como escalabilidade, organização e facilidade de manutenção. Além disso, foram implementadas operações completas de CRUD, garantindo o gerenciamento eficiente dos dados da aplicação. Também incorporamos análises estatísticas com o objetivo de extrair insights relevantes e agregar valor à experiência do usuário.
+No desenvolvimento da interface, utilizamos o Bootstrap como principal ferramenta de estilização, aliado ao JavaScript para a criação de interações dinâmicas, proporcionando uma navegação mais fluida, intuitiva e responsiva.
+
 
 ## Mais Informações
 
